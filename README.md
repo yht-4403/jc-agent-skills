@@ -66,7 +66,8 @@ Agent Skill 是给 AI Agent 加载的能力包：一份 `SKILL.md` 说明**什�
 ## 快速开始
 
 ```bash
-git clone https://github.com/yht-4403/jc-agent-skills.git ~/Code/jc-skills
+git clone https://github.com/yht-4403/jc-agent-skills.git
+cd jc-agent-skills
 cd ~/Code/jc-skills
 
 # 软链到你实际在用的平台，不需要的行删掉即可

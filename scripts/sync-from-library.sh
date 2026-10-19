@@ -58,6 +58,16 @@ for src in "$LIB"/jc-*/; do
 done
 echo "已同步 $synced 个技能 → $REPO"
 
+# rsync 会把本地真实文案覆盖进仓库，这里立即清洗个人与业务信息。
+# 脱敏规则放在仓库之外，避免规则本身成为公开内容。
+SCRUB="$(dirname "$REPO")/jc-scrub.py"
+if [[ -f "$SCRUB" ]]; then
+  python3 "$SCRUB" "$REPO"
+else
+  echo "警告：未找到脱敏脚本 $SCRUB"
+  echo "      仓库可能含未脱敏内容，提交前请人工检查，不要直接 push"
+fi
+
 # 仓库里有、库里没有的，只提示，不自动删
 for dir in "$REPO"/jc-*/; do
   [[ -d "$dir" ]] || continue
