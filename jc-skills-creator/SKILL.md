@@ -120,7 +120,7 @@ JC 自有 Skill 必须在默认核心集合中显式列出，不能被通用清�
 创建或更新 JC 自有及用户在当前 Skill 库中维护的品牌 Skill 时，区分三类名称：
 
 - `name` 与目录名是机器标识，使用英文小写 kebab-case，二者保持一致；
-- `agents/openai.yaml` 的 `interface.display_name` 是列表左侧的产品名，默认使用简洁的英文 Title Case；同一产品线统一以产品名开头，例如 `Acme Career Planner`；
+- `agents/openai.yaml` 的 `interface.display_name` 是列表左侧的产品名，默认使用简洁的英文 Title Case；产品线系列统一以 `自有产品线` 开头，例如 `Acme Career Planner`；
 - `interface.short_description` 是列表右侧的中文备注，用中文说明核心价值；`default_prompt` 跟随目标用户语言，并显式包含 `$skill-name`。
 
 除非用户明确指定其他语言，不要把 `SKILL.md` 的中文标题直接复制成 `display_name`。生成前先检查同品牌相邻 Skill 的拼写、前缀和命名结构，避免同一列表中中英混排或品牌大小写不一致。第三方 Skill 保留上游展示名，不因本约定擅自翻译。

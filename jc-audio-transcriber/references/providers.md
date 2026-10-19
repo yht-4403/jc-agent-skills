@@ -123,7 +123,7 @@ MINIO_PRESIGN_HOURS=12
 1. `--env-file`；
 2. `JC_AUDIO_TRANSCRIBER_ENV` 指定的文件；
 3. `~/.config/jc-audio-transcriber/.env`；
-4. 旧项目目录下的 `.env`（默认 `~/.dji-audio-transcriber/.env`，可用环境变量 `JC_AUDIO_LEGACY_ENV` 指向实际位置），仅作迁移兼容。
+4. 当前机器上的旧项目 `~/dji-audio-transcriber/.env`，仅作迁移兼容。
 
 环境变量优先于文件值。不得把密钥写入 Skill、知识库、逐字稿或日志。
 

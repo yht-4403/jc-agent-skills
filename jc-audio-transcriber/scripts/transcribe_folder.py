@@ -72,9 +72,7 @@ DOUBAO_STANDARD_MAX_BYTES = 512 * 1024 * 1024
 DOUBAO_BASE64_MAX_BYTES = 12 * 1024 * 1024
 DOUBAO_SUCCESS_CODES = {"20000000", "0"}
 DOUBAO_PENDING_CODES = {"20000001", "20000002"}
-LEGACY_ENV_FILE = Path(
-    os.environ.get("JC_AUDIO_LEGACY_ENV", "~/.dji-audio-transcriber/.env")
-).expanduser()
+LEGACY_ENV_FILE = Path("~/dji-audio-transcriber/.env")
 
 
 class TranscriberError(RuntimeError):

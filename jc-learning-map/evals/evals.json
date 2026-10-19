@@ -94,7 +94,7 @@
     {
       "id": "A01",
       "category": "adjacent",
-      "prompt": "我想快速搞懂一个新行业，给我一篇完整深度拆解，要有内幕、案例、执行细节和场景模拟。",
+      "prompt": "我想快速搞懂行业行业，给我一篇完整深度拆解，要有内幕、案例、执行细节和场景模拟。",
       "should_trigger": false,
       "expected_handler": "domain-sprint",
       "forbidden_handler": "jc-learning-map",

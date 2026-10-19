@@ -30,12 +30,6 @@ Use this hierarchy:
 8. `runtime-policy.json` registers platform-owned Skill exceptions and Grok source
    selection. `source-imports.json` records imported personal sources and recovery locations.
 
-State files (`active-skills.json`, `source-imports.json`, `skill-profiles.json`,
-`skill-channels.json`, `runtime-policy.json`) are machine-specific and are not versioned
-in this repository. They record the local Skill inventory, absolute paths and import
-provenance, so they must be generated per machine: run `bootstrap` after cloning or
-moving the Skill store to a new computer, and do not copy them across machines.
-
 Exceptions:
 
 - Leave Codex-managed `~/.codex/skills/.system/` untouched.
@@ -64,7 +58,7 @@ JC 自有 Skill 必须在默认核心集合中显式保留，不得因批量精�
 安装、激活或更新前检查源目录中的 `agents/openai.yaml`。不要只确认链接可读，还要区分机器标识、英文产品名和中文备注：
 
 - `SKILL.md` 的 `name` 与目录名保持英文小写 kebab-case；
-- JC 自有及用户在当前库维护的品牌 Skill，`interface.display_name` 默认使用英文 Title Case；同一产品线必须统一以产品名开头；
+- JC 自有及用户在当前库维护的品牌 Skill，`interface.display_name` 默认使用英文 Title Case；产品线系列必须统一以 `自有产品线` 开头；
 - `interface.short_description` 使用中文作为列表备注；`default_prompt` 跟随目标用户语言并包含 `$skill-name`；
 - 激活前对照同品牌相邻 Skill，检查前缀、大小写、命名结构和列表语言是否一致；
 - 第三方 Skill 保留上游 `display_name`，除非用户明确要求本地改名，不得按 JC 规范擅自翻译。
@@ -155,7 +149,7 @@ The script refuses conflicting real directories and symlinks. Do not bypass a co
 `runtime-policy.json` 的 `management_routes` 和 `management_script_routes` 登记
 会与本机规则冲突的个人安装、更新入口。管理器自动维护带独立标记的本地桥接，保留
 原上游正文；上游内容被替换后，完成更新会重新放回桥接，并检查是否正确。
-目前登记了 DBS 安装入口、DBS 更新入口和自有产品线更新入口。DBS 的安装脚本在
+目前登记了 DBS 安装入口、DBS 更新入口和 自有产品线 更新入口。DBS 的安装脚本在
 检测到管理器仓库后，将 `link`、`unlink`、`status` 交给 `dbs-route`，不执行旧的
 公共目录 / Grok 薄适配层逻辑；仓库外的候选源必须先导入，脚本不擅自复制。
 
@@ -180,7 +174,7 @@ python3 <skills-root>/jc-skill-installer/scripts/manage.py search "<用户当前
 `skill-profiles.json` 保存可审查的激活集合。默认集合只收录：
 
 - 全部 JC 自有入口；
-- 自有产品线主链路及版本通道当前指向的稳定版；
+- 自有产品线 主链路及版本通道当前指向的稳定版；
 - 从近期真实任务中反复出现的开发、讲解、UI、文档与协作能力。
 
 先执行 `profile-diff jc-default` 查看变化，再由用户决定是否 `apply-profile jc-default`。应用 Profile 只改活动清单和运行时链接，不删除源 Skill；被停用的长尾能力仍可由 `search` 找回。每次增删默认项都要写出真实使用证据或路由理由，不以“也许有用”为准入标准。
