@@ -1,8 +1,8 @@
 # jc-skills
 
-**我在真实工作里每天在用的一套 Agent Skills。18 个技能，覆盖写作与表达、学习与研究、工作协作、技能工程和前端设计。**
+**我在真实工作里每天在用的一套 Agent Skills。19 个技能，覆盖写作与表达、学习与研究、工作协作、技能工程和前端设计。**
 
-A collection of 18 [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) I use in my actual daily work — writing, research, learning, coordination, and frontend design.
+A collection of 19 [Agent Skills](https://docs.claude.com/en/docs/claude-code/skills) I use in my actual daily work — writing, research, learning, coordination, and frontend design.
 
 ---
 
@@ -45,6 +45,7 @@ Agent Skill 是给 AI Agent 加载的能力包：一份 `SKILL.md` 说明**什�
 
 | 技能 | 解决什么问题 |
 | --- | --- |
+| [`jc-decision-grade`](jc-decision-grade/) | 把方案做成可下注的决策交付。先立事实底稿与反例，再用基准率、预验尸和外部验收压住判断 |
 | [`jc-report`](jc-report/) | 日报、周报、月报、阶段总结的统一规范，写清结论、进展、验证和风险 |
 | [`jc-work-coordination`](jc-work-coordination/) | 把情况说明改成能直接发出去的工作对接消息，按接收人职责保留行动和必要事实 |
 | [`jc-project-loop`](jc-project-loop/) | 用本地任务账本持续推进、复核和恢复跨会话的长周期项目 |

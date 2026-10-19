@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Decision Grade"
+  short_description: "把方案改成可下注的决策交付：事实底稿、基准率、预验尸与外部验收"
+  default_prompt: "使用 $jc-decision-grade 把这个任务做成决策级交付："
+policy:
+  allow_implicit_invocation: true
