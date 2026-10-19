@@ -1,0 +1,94 @@
+{
+  "skill_name": "jc-concept-deconstruct",
+  "baseline": {
+    "source": "2026-10-12 真实任务（情绪价值聊天记录拆解）",
+    "observed_failures": [
+      "无 skill 时每次需要重新交代拆解分层和输出格式",
+      "二手材料里的数字容易被直接采信写进正文",
+      "分析内容容易被套上应试包装（面试话术），与用户对外分享的意图冲突",
+      "名词出处存在被编造的风险"
+    ]
+  },
+  "evals": [
+    {
+      "id": "P01",
+      "category": "positive",
+      "prompt": "这是我和 AI 的聊天记录，帮我拆解内化，每个名词都讲到我能复述。",
+      "should_trigger": true,
+      "assertions": [
+        "产物为知识库 Markdown 文档，命名 YYYY-MM-DD-中文名.md",
+        "概念按材料学科构成分层，每层是名词表格：名词|出处|含义|一句话内化",
+        "一句话内化是可对人讲的操作性解释，不是同义改写",
+        "含商业化判断题，每条是可被反例挑战的判断",
+        "材料中所有具体数字进入待核实清单并标注未核实",
+        "无面试话术等应试包装"
+      ]
+    },
+    {
+      "id": "P02",
+      "category": "positive",
+      "prompt": "把这篇讲私域运营的文章拆成概念笔记，我想发到飞书当作品集。",
+      "should_trigger": true,
+      "assertions": [
+        "对外分享语气，不预设读者场景",
+        "概念字典 + 案例/机制拆解 + 判断题结构完整",
+        "原文术语作为词条保留",
+        "数字进待核实清单"
+      ]
+    },
+    {
+      "id": "P03",
+      "category": "positive",
+      "prompt": "使用 $jc-concept-deconstruct 拆解<某课程逐字稿>。",
+      "should_trigger": true,
+      "assertions": [
+        "显式调用直接执行，不反问格式",
+        "输出与 P01 同构",
+        "短材料做轻量版：概念表+判断题+待核实清单"
+      ]
+    },
+    {
+      "id": "N01",
+      "category": "negative",
+      "prompt": "拆解一下'情绪价值'这个概念，它和情绪劳动有什么区别？",
+      "should_trigger": false,
+      "expected_routing": "单概念辨析任务，非材料拆解，应走通用对话或概念澄清类能力",
+      "assertions": [
+        "不生成概念字典文档",
+        "直接辨析两个概念的关系"
+      ]
+    },
+    {
+      "id": "N02",
+      "category": "negative",
+      "prompt": "把刚才这段对话存进知识库，以后好找。",
+      "should_trigger": false,
+      "expected_routing": "对话轻量沉淀，归 jc-knowledge-capture",
+      "assertions": [
+        "不做逐名词拆解",
+        "轻量保存原文要点"
+      ]
+    },
+    {
+      "id": "A01",
+      "category": "adjacent",
+      "prompt": "帮我拆解一下卡尼曼的前景理论。",
+      "should_trigger": false,
+      "expected_routing": "无材料、单概念解释，通用回答；若用户随后给出材料再触发",
+      "assertions": [
+        "不建文档",
+        "直接讲解概念并可提供拆解选项"
+      ]
+    },
+    {
+      "id": "F01",
+      "category": "first-use",
+      "prompt": "帮我拆解这段聊天记录。",
+      "should_trigger": true,
+      "assertions": [
+        "材料齐全时直接开始拆解，不先问格式",
+        "只缺材料时索取最小输入（粘贴或给路径）"
+      ]
+    }
+  ]
+}

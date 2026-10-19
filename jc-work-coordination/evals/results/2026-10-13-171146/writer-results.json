@@ -1,0 +1,92 @@
+{
+  "results": [
+    {
+      "id": "ops_noise",
+      "applies": true,
+      "kind": "message",
+      "output": "哈咯，@陈工，staging-lesson-api.example.com 的转发绑定能不能帮忙核对一下，切到这次新的 lesson-api staging 服务？namespace 是 sandbox-learning，当前 Pod IP 172.16.20.31，应用端口 6000。域名访问还是旧接口，直连新 Pod 正常，可能和上周换 namespace 有关。\nhttps://ops.example.com/deploy/704"
+    },
+    {
+      "id": "dev_reproduce",
+      "applies": true,
+      "kind": "message",
+      "output": "帮忙看下 test 的徽章分页：GET /api/interactivelesson/badges，userId=901、termId=T88、page=last、pageSize=3。这个用户在这个课期已有 7 枚徽章，实际返回第一页 3 枚，预期应该返回最后一页 1 枚，我这边重复测了两次都这样。"
+    },
+    {
+      "id": "product_rule",
+      "applies": true,
+      "kind": "message",
+      "output": "想确认下，同一个学期里，学生从 A 班转到 B 班，之前获得的徽章是保留，还是按新班重新计算？"
+    },
+    {
+      "id": "manager_block",
+      "applies": true,
+      "kind": "message",
+      "output": "能帮忙协调运维处理一下 pre-prod 的域名绑定吗？新服务已经部署，但域名还连着旧服务，业务联调卡在这里。原计划周五验收，目前还没有确定的修复时间。"
+    },
+    {
+      "id": "followup_no_deadline",
+      "applies": true,
+      "kind": "message",
+      "output": "哈咯，@杜工，昨天说的学情服务 staging 域名绑定现在处理得怎么样了？改好后喊我一下，我这边再测。"
+    },
+    {
+      "id": "reply_not_verified",
+      "applies": true,
+      "kind": "message",
+      "output": "收到，谢谢，我这边再测一下域名访问，有结果同步你。"
+    },
+    {
+      "id": "strict_one_sentence",
+      "applies": true,
+      "kind": "message",
+      "output": "sandbox 的 report-worker 已确认卡死，能不能帮忙重启一下这个服务？"
+    },
+    {
+      "id": "unknown_cause_target",
+      "applies": true,
+      "kind": "message",
+      "output": "帮忙核对下 staging 的课程接口入口配置：接口访问报 500，但健康检查正常，我怀疑和入口有关，目前还没查到具体的 Service、namespace 或 Pod 地址。"
+    },
+    {
+      "id": "fake_secret",
+      "applies": true,
+      "kind": "message",
+      "output": "帮忙核对下 sandbox Java 服务有没有加载我刚更新的数据库配置，新 host 是 db-sandbox.example.com。账号密码和配置 Token 我走安全渠道给你。"
+    },
+    {
+      "id": "missing_object",
+      "applies": true,
+      "kind": "clarification",
+      "output": "你想让他改好具体什么问题？"
+    },
+    {
+      "id": "route_technical_explanation",
+      "applies": false,
+      "kind": "not_applicable",
+      "output": "",
+      "reason": "用户要理解 Service 端口转发机制，没有工作对接消息的任务。"
+    },
+    {
+      "id": "route_debug",
+      "applies": false,
+      "kind": "not_applicable",
+      "output": "",
+      "reason": "用户要求排查接口 500 的根因，属于技术调查，且明确不需要写消息。"
+    },
+    {
+      "id": "route_job_greeting",
+      "applies": false,
+      "kind": "not_applicable",
+      "output": "",
+      "reason": "招聘平台的首次求职招呼属于求职沟通，超出该 Skill 的工作对接范围。"
+    },
+    {
+      "id": "route_formal_report",
+      "applies": false,
+      "kind": "not_applicable",
+      "output": "",
+      "reason": "用户要正式故障复盘报告，需要系统整理原因、影响和恢复记录，超出聊天对接消息的范围。"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC English Chunk Cards"
+  short_description: "把日常中英文拆成语义块，写入墨墨记忆卡"
+  default_prompt: "使用 $jc-english-chunk-cards 把这段日常材料拆成语义块卡片并写入我的墨墨记忆卡。"
+policy:
+  allow_implicit_invocation: true

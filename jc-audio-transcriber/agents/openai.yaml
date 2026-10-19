@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Audio Transcriber"
+  short_description: "批量录音转写；默认本地 FunASR，云端次选 Qwen"
+  default_prompt: "使用 $jc-audio-transcriber 转写这个录音文件夹。未指定提供方时用本地 Fun-ASR-Nano；我说云端或 Qwen 时用 Qwen；点名豆包才走火山。生成完整逐字稿与精简知识文档。"
+policy:
+  allow_implicit_invocation: false

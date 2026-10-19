@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Voice"
+  short_description: "JC 的个人写作嗓音系统：说明嗓（默认）/ 主理人暖嗓 / dbs 冷嗓，写产品介绍、README、前言、说明与复盘"
+  default_prompt: "使用 $jc-voice 写这段内容。先按读者是谁选嗓音：一群陌生人在评估一件东西用说明嗓（不出现自述人称），具体一个人在跟我打交道用主理人嗓，点破问题用 dbs 嗓。选完再动笔。"
+policy:
+  allow_implicit_invocation: false

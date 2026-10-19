@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Report"
+  short_description: "日报、周报统一按报告规范输出，写清进展与验证；日记仅按日期保存和去重追加"
+  default_prompt: "使用 $jc-report 按核心结论、业务侧、技术侧、风险与下一步生成工作报告；默认生成当日工作日报并按日期去重保存到日记，周报按指定周期汇总，收获与反思仅使用有依据的材料。"
+policy:
+  allow_implicit_invocation: false

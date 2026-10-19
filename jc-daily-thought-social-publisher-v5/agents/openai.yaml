@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Daily Thought Publisher V5"
+  short_description: "将知识库长文拆成一个可直接发布的单主题社交媒体内容"
+  default_prompt: "使用 $jc-daily-thought-social-publisher-v5 将这篇长文改成可发布的单主题社交媒体文案。"
+policy:
+  allow_implicit_invocation: false
