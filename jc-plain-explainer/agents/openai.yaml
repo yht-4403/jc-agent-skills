@@ -1,0 +1,7 @@
+interface:
+  display_name: "JC Plain Explainer"
+  short_description: "优先用原始代码、真实报文和抽象图，把复杂机制讲出可验证的理解感"
+  default_prompt: "使用 $jc-plain-explainer，通过一个具体案例和可核对的原始制品，把这个复杂机制一步步讲清楚。"
+
+policy:
+  allow_implicit_invocation: true

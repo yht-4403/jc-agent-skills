@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Knowledge Capture"
+  short_description: "将材料沉淀为知识文档，或整理成可公开分享的口语化直述内容"
+  default_prompt: "使用 $jc-knowledge-capture 将这份材料沉淀为可复用的知识文档；如果用于公开发布，默认使用口语化直述体。"
+policy:
+  allow_implicit_invocation: false

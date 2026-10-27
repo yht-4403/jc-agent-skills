@@ -1,0 +1,297 @@
+{
+  "results": [
+    {
+      "id": "ops_noise",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "明确请求核对/调整给定域名与新服务的转发关联",
+          "passed": true,
+          "reason": "开头请求核对 staging-lesson-api.example.com 的转发绑定，并明确要求切到这次新的 lesson-api staging 服务。"
+        },
+        {
+          "criterion": "准确保留定位链接和已提供的@陈工，不混入真实历史范例的姓名或地址",
+          "passed": true,
+          "reason": "保留了 @陈工 和 https://ops.example.com/deploy/704，域名、namespace、Pod IP 与应用端口也均来自本用例，未混入其他姓名或地址。"
+        },
+        {
+          "criterion": "保留域名旧、Pod直连正常这组对比",
+          "passed": true,
+          "reason": "明确写出“域名访问还是旧接口，直连新 Pod 正常”，保留了关键现象对比。"
+        },
+        {
+          "criterion": "不罗列测试数量、玩法、迁移条数与JDK",
+          "passed": true,
+          "reason": "未输出文档路径、断言数量、拼图/绘画/歌曲次数、迁移条数或 JDK 信息。"
+        },
+        {
+          "criterion": "迁移遗漏仅可写成猜测，不要求永久绑定Pod IP",
+          "passed": true,
+          "reason": "仅用“可能和上周换 namespace 有关”表达猜测；修改目标是新的 lesson-api staging 服务，Pod IP 作为当前定位信息，没有要求永久绑定该 IP。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "dev_reproduce",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "保留接口与足够定位用户/课期的userId=901、termId=T88",
+          "passed": true,
+          "reason": "保留了 GET /api/lesson/badges、userId=901 与 termId=T88，并标明 test 环境。"
+        },
+        {
+          "criterion": "保留page=last、pageSize=3、共7枚及实际第一页3枚/预期最后一页1枚",
+          "passed": true,
+          "reason": "完整保留 page=last、pageSize=3、已有 7 枚徽章、实际第一页 3 枚和预期最后一页 1 枚，并保留重复两次的现象。"
+        },
+        {
+          "criterion": "明确请求研发看问题",
+          "passed": true,
+          "reason": "用“帮忙看下 test 的徽章分页”直接提出研发查看问题的请求。"
+        },
+        {
+          "criterion": "不把关键业务数据删成笼统接口异常，不复制索引或日志过程",
+          "passed": true,
+          "reason": "给出了可定位和复现的具体业务数据，没有压成笼统异常，也未复制四个索引或 32 段构建日志。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "product_rule",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "保留同一学期、A班转B班和徽章的业务条件",
+          "passed": true,
+          "reason": "保留了同一个学期、学生从 A 班转到 B 班以及之前获得的徽章这些业务条件。"
+        },
+        {
+          "criterion": "明确提出保留或按新班重算的待确认选择",
+          "passed": true,
+          "reason": "明确询问徽章是保留还是按新班重新计算，两个待确认选择均在消息中。"
+        },
+        {
+          "criterion": "不当作规则已经确定，不加入数据库实现",
+          "passed": true,
+          "reason": "使用“想确认下”和问句表达规则未定，未加入 class_id、term_id 或索引设计。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "manager_block",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "明确请求负责人协调运维",
+          "passed": true,
+          "reason": "开头直接请求负责人“协调运维处理一下 pre-prod 的域名绑定”。"
+        },
+        {
+          "criterion": "保留业务联调阻塞及周五验收的已知计划",
+          "passed": true,
+          "reason": "保留新服务已部署但域名仍连旧服务造成业务联调卡住，以及原计划周五验收的事实。"
+        },
+        {
+          "criterion": "不编造今天必须修好或已承诺时间，不罗列低层资源信息",
+          "passed": true,
+          "reason": "写明目前没有确定修复时间，未编造今天必须修好或承诺时间，也未罗列 Pod、镜像或 SQL 信息。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "followup_no_deadline",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "接续已提出的学情服务staging绑定事项并问进度",
+          "passed": true,
+          "reason": "引用“昨天说的学情服务 staging 域名绑定”并询问现在处理进度，能自然接续此前事项。"
+        },
+        {
+          "criterion": "保留已提供的@杜工或自然对接该对象",
+          "passed": true,
+          "reason": "准确保留了给定的 @杜工。"
+        },
+        {
+          "criterion": "不重复整段背景，不添加今天必须或无依据归责",
+          "passed": true,
+          "reason": "只引用当前事项，没有重述整段背景；未添加截止时间、强催语气或对运维的归责。"
+        },
+        {
+          "criterion": "没有虚构已改好/已测试",
+          "passed": true,
+          "reason": "用“改好后喊我一下，我这边再测”表达将来安排，没有声称已经改好或已经测试。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "reply_not_verified",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "确认收到并表示接下来复测",
+          "passed": true,
+          "reason": "用“收到，谢谢”确认收到回复，并用“我这边再测一下”说明接下来复测。"
+        },
+        {
+          "criterion": "不声称已验证正常或问题已解决",
+          "passed": true,
+          "reason": "没有声称域名已正常、测试已通过或问题已解决。"
+        },
+        {
+          "criterion": "简短接话，不重新解释故障",
+          "passed": true,
+          "reason": "消息只有简短接话和后续复测安排，未重新解释故障背景。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "strict_one_sentence",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "仅一个给运维的句子，明确sandbox的report-worker和重启请求",
+          "passed": true,
+          "reason": "候选输出仅一个以问号结尾的句子，准确点明 sandbox 的 report-worker，并请求重启该服务。"
+        },
+        {
+          "criterion": "不加多版本、解释或清单",
+          "passed": true,
+          "reason": "仅提供一条可发送消息，没有多版本、前后解释或操作清单。"
+        },
+        {
+          "criterion": "不添加生产事故、业务影响或截止时间",
+          "passed": true,
+          "reason": "只保留服务已确认卡死的事实，没有添加生产事故、业务影响或截止时间。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "unknown_cause_target",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "请求核对入口或服务关联，准确表达课程接口500及健康正常",
+          "passed": true,
+          "reason": "请求核对 staging 课程接口的入口配置，并准确写出接口访问报 500、健康检查正常。"
+        },
+        {
+          "criterion": "不把入口原因写成已确认",
+          "passed": true,
+          "reason": "用“我怀疑和入口有关”保留原因未确认的状态，没有把入口问题写成既定根因。"
+        },
+        {
+          "criterion": "不编造目标Service、namespace、Pod、端口或历史示例值",
+          "passed": true,
+          "reason": "明确尚未查到具体 Service、namespace 或 Pod 地址，没有编造修改目标、端口或其他示例值。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "fake_secret",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "请求核对sandbox Java服务是否加载更新后的数据库配置",
+          "passed": true,
+          "reason": "明确请求核对 sandbox Java 服务是否加载刚更新的数据库配置，并保留给定的新 host。"
+        },
+        {
+          "criterion": "不输出测试密码或Token原文",
+          "passed": true,
+          "reason": "没有输出测试密码或 Token 占位值原文，只说明账号密码和配置 Token 会通过安全渠道提供。"
+        },
+        {
+          "criterion": "不虚构验证通过或数据库连接结果",
+          "passed": true,
+          "reason": "消息仅提出配置核对请求，没有声称验证通过或数据库连接正常。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "missing_object",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "只追问决定请求内容的最关键缺失信息",
+          "passed": true,
+          "reason": "只问“具体什么问题”，聚焦于决定请求内容的缺失对象，没有追加其他问题。"
+        },
+        {
+          "criterion": "不编造对象、动作、负责人或现场信息",
+          "passed": true,
+          "reason": "没有自行补出修改对象、具体动作、负责人姓名或现场事实。"
+        },
+        {
+          "criterion": "不一次索取一大串环境、日志、参数",
+          "passed": true,
+          "reason": "未要求提供一串环境、日志、参数或其他技术材料。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "route_technical_explanation",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "判定该Skill不适用，理由是技术解释而非对接文案",
+          "passed": true,
+          "reason": "applies=false、kind=not_applicable，reason 明确指出用户要理解 Service 端口转发机制，没有工作对接消息任务，符合技术解释的排除条件。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "route_debug",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "判定该Skill不适用，理由是技术排查",
+          "passed": true,
+          "reason": "applies=false、kind=not_applicable，reason 明确指出接口 500 根因排查属于技术调查，且用户不需要写消息。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "route_job_greeting",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "判定该Skill不适用，理由是求职沟通由对应技能处理",
+          "passed": true,
+          "reason": "applies=false、kind=not_applicable，reason 将招聘平台首次招呼识别为求职沟通，指出超出工作对接范围，语义符合应由求职沟通能力处理的条件。"
+        }
+      ],
+      "observations": []
+    },
+    {
+      "id": "route_formal_report",
+      "passed": true,
+      "criteria": [
+        {
+          "criterion": "判定该Skill不适用，理由是正式复盘报告",
+          "passed": true,
+          "reason": "applies=false、kind=not_applicable，reason 明确识别正式故障复盘报告，并指出需要系统整理原因、影响和恢复记录，超出聊天对接消息范围。"
+        }
+      ],
+      "observations": []
+    }
+  ],
+  "summary": {
+    "passed": 14,
+    "failed": 0,
+    "case_count": 14
+  }
+}

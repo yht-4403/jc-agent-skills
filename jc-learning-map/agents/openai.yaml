@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Learning Map"
+  short_description: "把陌生主题整理成知识地图、两层卡点和清晰的当前行动入口"
+  default_prompt: "使用 $jc-learning-map 帮我梳理这个主题的全貌、两层卡点和当前入口。"
+policy:
+  allow_implicit_invocation: false

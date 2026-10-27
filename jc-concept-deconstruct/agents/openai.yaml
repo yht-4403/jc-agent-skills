@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Concept Deconstruct"
+  short_description: "把聊天记录/文章/学习材料拆成概念字典、案例拆解和判断题，存成知识库笔记"
+  default_prompt: "使用 $jc-concept-deconstruct 把这份材料拆成概念字典、案例拆解和判断题，存成知识库文档。"
+policy:
+  allow_implicit_invocation: true

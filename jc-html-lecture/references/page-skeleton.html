@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{课题} · {副标题}</title>
+<link rel="stylesheet" href="./assets/style-core.css">
+<link rel="stylesheet" href="./assets/jc-note.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tb-in">
+    <div class="brand"><span class="mark">{编号}</span> {课题} <span class="sub">{讲次}</span></div>
+    <div class="tb-right">
+      <a href="./{总览页}">← 回到总览</a>
+      <span id="tbMeta">1 / {节数} 节</span>
+    </div>
+  </div>
+  <div class="pg"><i id="pgBar"></i></div>
+</div>
+
+<div class="shell">
+  <nav class="side">
+    <p class="side-title">目录</p>
+    <ol class="toc" id="toc">
+      <li><a href="#s1"><i>01</i><span>{节标题}</span></a></li>
+      <li><a href="#s2"><i>02</i><span>{节标题}</span></a></li>
+    </ol>
+    <div class="side-foot">通读约 {N} 分钟<br>{X} 张图 · {Y} 段代码</div>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">{讲次} · {主题}</div>
+      <h1>{一句话标题，带一个<em>重点词</em>}</h1>
+      <p class="lede">{这页解决什么问题，两三句。读者是谁，读完能做什么。}</p>
+      <p class="lede" style="font-size:15.5px;color:var(--muted)">{怎么读：先读哪几节，哪些可以跳。}</p>
+    </header>
+
+    <section class="chapter" id="s1">
+      <div class="ch-head">
+        <div class="ch-num">01</div>
+        <div>
+          <p class="ch-kicker">{这一节在整条线的位置}</p>
+          <h2>{标题}</h2>
+        </div>
+      </div>
+      <p class="ch-lede">{一段导语，把抽象主题落到一个具体问题上。}</p>
+
+      <p>{正文。一个贯穿案例走到底，先说「不做会怎样」，再上机制。}</p>
+
+      <div class="fig">
+        <svg viewBox="0 0 880 260" role="img" aria-label="{图的替代文本}">
+          <rect x="40" y="60" width="220" height="60" rx="10" fill="#E9F1F4" stroke="#BFD5DD"/>
+          <text x="150" y="96" text-anchor="middle" font-size="12" fill="#1D5B79">示例节点</text>
+        </svg>
+        <p class="fig-cap"><b>看什么：</b>一句话说清要读者注意哪两处，不复述图里的字。</p>
+      </div>
+
+      <div class="note"><b>容易忽略的点：</b>{一句提醒，附带一个具体后果。}</div>
+
+      <div class="code-slot"><script type="text/plain" class="src" data-lang="python" data-title="{这段代码证明什么}">
+def demo(x):
+    return x + 1
+</script></div>
+
+      <details class="quiz">
+        <summary>自检：{一个能用自己话回答的问题}</summary>
+        <div class="a"><p>{答案，先说结论，再补一层原因。}</p></div>
+      </details>
+    </section>
+
+    <section class="chapter" id="s2">
+      <div class="ch-head">
+        <div class="ch-num">02</div>
+        <div>
+          <p class="ch-kicker">{kicker}</p>
+          <h2>{标题}</h2>
+        </div>
+      </div>
+      <p class="ch-lede">{导语}</p>
+      <p>{正文}</p>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>维度</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td>{行一}</td><td>{说明}</td></tr>
+            <tr><td>{行二}</td><td>{说明}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="foot">
+      <p><b>来源与边界：</b>{哪些是事实、出自哪里；哪些是为讲解构造的演示假设。}</p>
+      <p><b>整理日期：</b>{YYYY-MM-DD}　·　<b>配套：</b>{文档地图文件名}</p>
+    </div>
+  </main>
+</div>
+
+<button class="top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script src="./assets/jc-page.js"></script>
+<script src="./assets/jc-code.js"></script>
+<script src="./assets/jc-note.js" data-jc-note
+        data-doc-id="{课题缩写}-{讲次}" data-doc-title="{页面标题}"></script>
+</body>
+</html>

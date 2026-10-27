@@ -1,0 +1,35 @@
+{
+  "run_id": "2026-10-13-171146",
+  "finished_at": "2026-10-13T17:23:50.830285+08:00",
+  "case_count": 14,
+  "draft_cases": 10,
+  "routing_cases": 4,
+  "passed": 14,
+  "failed": 0,
+  "independent_generation": true,
+  "independent_review": true,
+  "writer_received_criteria": false,
+  "parent_context_forked": false,
+  "generation_agent": "/root/coordination_test_writer",
+  "review_agent": "/root/coordination_test_reviewer",
+  "skill_file_sha256": "3ef44fd594cdc8425624184fcfce7dd405a173c4d4fa613ca7a6ae245313a398",
+  "case_file_sha256": "f814b6d4044e1ba614d2aaab79ebc3f2630cc025bc593a72f27b7d8174adb720",
+  "additional_checks": {
+    "case_ids_and_rubrics_consistent": true,
+    "fake_secret_values_absent": true,
+    "historical_identifiers_absent": true,
+    "new_ops_locators_preserved": true,
+    "developer_reproduction_parameters_preserved": true,
+    "strict_one_sentence_respected": true,
+    "missing_context_asks_one_question": true,
+    "four_out_of_scope_cases_declined": true
+  },
+  "observations": [],
+  "limitations": [
+    "Explicitly supplied Skill; not a full-catalog automatic selection test",
+    "Not a repeated-sampling reliability estimate",
+    "No external messages, deployments, database actions or network calls were executed",
+    "Runtime synchronization verified separately by JC manager"
+  ],
+  "operational_data_is_fictional": true
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "JC Learning"
+  short_description: "先生成学习地图，再逐讲深入概念、原典与应用练习"
+  default_prompt: "使用 $jc-learning 带我系统学习这个课题，先给学习地图和第一讲。"

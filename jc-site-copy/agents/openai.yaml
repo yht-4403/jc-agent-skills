@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Site Copy"
+  short_description: "前端文案优化：按页面任务限字，官网能转化，登录后界面不注水"
+  default_prompt: "使用 $jc-site-copy 按页面任务优化前端文案。页面是："
+policy:
+  allow_implicit_invocation: false

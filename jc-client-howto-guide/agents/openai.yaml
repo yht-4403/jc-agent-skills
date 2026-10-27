@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Client How-to Guide"
+  short_description: "把交付流程写成客户照着能做完的图文指引"
+  default_prompt: "使用 $jc-client-howto-guide 给这次交付写一份客户操作指引。"
+policy:
+  allow_implicit_invocation: true

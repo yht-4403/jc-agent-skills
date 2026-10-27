@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Work Coordination"
+  short_description: "工作协作对接：按对方职责保留必要信息，把请求、现象和定位入口写成可直接发送的消息"
+  default_prompt: "使用 $jc-work-coordination，把这段情况改成可直接发给同事的对接消息，保留完成这一步所需的信息和我原本的语气。"
+policy:
+  allow_implicit_invocation: true

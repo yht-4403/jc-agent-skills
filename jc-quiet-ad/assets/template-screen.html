@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>静默广告 · 版式样张</title>
+<style>
+:root{
+  /* ── 画面 token ── */
+  --lilac:#EDE3FA;
+  --lilac-day:#F2EAFC;
+  --ink:#1F1D24;
+  --muted:#6B6570;
+  --paper:#F7F5FB;
+  --red:#FF2442;
+
+  /* ── 稿面尺寸（真尺寸，靠 scale 缩到屏幕上） ── */
+  --v-w:1080; --v-h:1920; --v-fs:92; --v-lh:1.95; --v-pad-x:162; --v-top:576;
+  --h-w:1920; --h-h:1080; --h-fs:100; --h-lh:1.75; --h-pad-x:320; --h-top:240;
+
+  --v-scale:.33;
+  --h-scale:.40;
+
+  /* ── 界面色，不进画面 ── */
+  --ui-bg:#FAF9FC;
+  --ui-line:#E3E0EA;
+  --ui-text:#2A2730;
+  --ui-sub:#77727F;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--ui-bg);
+  color:var(--ui-text);
+  font-family:-apple-system,"PingFang SC","Noto Sans SC","Source Han Sans SC",sans-serif;
+  font-weight:400;
+  font-size:15px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1280px;margin:0 auto;padding:56px 40px 96px;}
+
+/* ── 页头 ── */
+.eyebrow{
+  font-size:12px;letter-spacing:.14em;color:var(--ui-sub);
+  text-transform:uppercase;margin:0 0 14px;
+}
+h1{
+  font-size:28px;font-weight:500;line-height:1.4;margin:0 0 12px;
+  letter-spacing:-.01em;
+}
+.lede{font-size:15px;color:var(--ui-sub);max-width:62ch;margin:0 0 36px;}
+.lede b{font-weight:500;color:var(--ui-text);}
+
+/* ── 控制条 ── */
+.controls{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:14px 18px;border:.5px solid var(--ui-line);border-radius:12px;
+  background:#fff;margin-bottom:40px;
+}
+.controls button{
+  font:inherit;font-size:13px;font-weight:400;
+  padding:7px 14px;border-radius:8px;cursor:pointer;
+  border:.5px solid var(--ui-line);background:#fff;color:var(--ui-text);
+  transition:background .15s,border-color .15s;
+}
+.controls button:hover{border-color:#C9C3D6;}
+.controls button[aria-pressed="true"]{background:var(--lilac);border-color:#D9CCF2;}
+.hint{font-size:12.5px;color:var(--ui-sub);margin-left:auto;}
+
+/* ── 稿面容器 ── */
+.stage{display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap;}
+.slot{position:relative;}
+.slot-tag{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:12px;
+}
+.slot-tag span:first-child{font-size:13px;font-weight:500;}
+.slot-tag span:last-child{font-size:12px;color:var(--ui-sub);}
+.frame{
+  position:relative;overflow:hidden;border-radius:2px;
+  box-shadow:0 0 0 .5px rgba(42,39,48,.18);
+}
+.frame.v{width:calc(1080px * var(--v-scale));height:calc(1920px * var(--v-scale));}
+.frame.h{width:calc(1920px * var(--h-scale));height:calc(1080px * var(--h-scale));}
+
+/* ── 画面本体 ── */
+.board{
+  position:absolute;top:0;left:0;
+  transform-origin:top left;
+  background:var(--lilac);color:var(--ink);
+  font-weight:400;
+}
+.board.v{
+  width:1080px;height:1920px;
+  font-size:92px;line-height:1.95;
+  padding:576px 162px 0;
+  transform:scale(var(--v-scale));
+}
+.board.h{
+  width:1920px;height:1080px;
+  font-size:100px;line-height:1.75;
+  padding:240px 0 0 320px;
+  transform:scale(var(--h-scale));
+}
+.copy{outline:none;}
+.copy:focus{outline:2px dashed rgba(255,36,66,.4);outline-offset:.08em;}
+.board.v .copy{width:756px;}
+.board.h .copy{width:1200px;}
+
+/* 嵌图占位：1.4 倍字高，句中，没有任何效果 */
+.chip{
+  display:inline-block;
+  width:1.4em;height:1.4em;
+  vertical-align:-.32em;
+  margin:0 .04em;
+  border:2px dashed rgba(31,29,36,.28);
+  border-radius:1px;
+  background:
+    repeating-linear-gradient(45deg,rgba(31,29,36,.05) 0 3px,transparent 3px 9px);
+  position:relative;
+}
+.chip::after{
+  content:"图";
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:.34em;line-height:1;color:rgba(31,29,36,.42);letter-spacing:0;
+}
+
+/* ── 落款区 ── */
+.sign{position:absolute;left:0;right:0;bottom:0;text-align:center;}
+.sign.v{padding-bottom:96px;height:300px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:26px;}
+.sign.h{padding-bottom:52px;height:160px;display:flex;align-items:flex-end;justify-content:space-between;padding-left:96px;padding-right:96px;}
+
+.s1{font-size:42px;letter-spacing:.01em;display:flex;align-items:center;gap:.18em;}
+.sign.h .s1{font-size:45px;}
+.dot{
+  display:inline-block;width:.56em;height:.56em;border-radius:50%;
+  background:var(--red);flex:none;
+}
+.s2{font-size:26px;color:var(--muted);letter-spacing:.01em;}
+.sign.h .s2{font-size:28px;}
+.pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:57px;padding:0 26px;border-radius:29px;
+  background:var(--red);color:#fff;font-size:27px;letter-spacing:.02em;
+}
+.sign.h .pill{height:62px;padding:0 29px;border-radius:31px;font-size:29px;}
+
+/* ── 辅助线 ── */
+.guides{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .18s;}
+.show-guides .guides{opacity:1;}
+.g{position:absolute;border:1px dashed rgba(255,36,66,.55);}
+.g b{
+  position:absolute;font-size:22px;font-weight:400;line-height:1;
+  color:#C4152F;background:rgba(255,255,255,.86);
+  padding:6px 9px;white-space:nowrap;letter-spacing:0;
+}
+.board.v .g b{font-size:22px;}
+.board.h .g b{font-size:24px;}
+
+/* ── 参数卡 ── */
+.spec{margin-top:64px;}
+.spec h2{font-size:18px;font-weight:500;margin:0 0 8px;}
+.spec p.sub{font-size:13.5px;color:var(--ui-sub);margin:0 0 22px;}
+table{
+  width:100%;border-collapse:collapse;font-size:14px;
+  background:#fff;border:.5px solid var(--ui-line);border-radius:12px;overflow:hidden;
+}
+th,td{text-align:left;padding:12px 16px;border-bottom:.5px solid var(--ui-line);vertical-align:top;}
+th{font-weight:500;font-size:12.5px;color:var(--ui-sub);letter-spacing:.04em;background:#FCFBFD;}
+tr:last-child td{border-bottom:0;}
+td code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:13px;background:#F5F3F9;padding:1px 6px;border-radius:4px;
+}
+.swatch{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:7px;box-shadow:0 0 0 .5px rgba(0,0,0,.12) inset;}
+.note{
+  margin-top:36px;padding:20px 24px;border-left:2px solid var(--red);
+  background:#fff;border-radius:0 12px 12px 0;font-size:14px;color:var(--ui-sub);
+}
+.note b{font-weight:500;color:var(--ui-text);}
+
+@media (max-width:1180px){
+  .wrap{padding:36px 24px 72px;}
+  .hint{display:none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">JC Quiet Ad · Layout Sheet</p>
+  <h1>静默广告版式样张</h1>
+  <p class="lede">改文案即可出稿。所有尺寸是真尺寸（1080×1920 / 1920×1080），只是缩到屏幕上显示。<b>文字可直接点开编辑</b>，辅助线用来核对边距、字高和落款区占比。</p>
+
+  <div class="controls">
+    <button id="btn-guides" aria-pressed="false">辅助线</button>
+    <button id="btn-day" aria-pressed="false">昼间高亮度版</button>
+    <button id="btn-reset">复位文案</button>
+    <span class="hint">虚线框里的「图」是嵌图占位，实际用 1.3–1.5 倍字高的低质照片替换</span>
+  </div>
+
+  <div class="stage" id="stage">
+
+    <!-- 竖屏 -->
+    <div class="slot">
+      <div class="slot-tag"><span>竖屏</span><span>1080 × 1920 · 字高 4.8%</span></div>
+      <div class="frame v">
+        <div class="board v" data-board>
+          <div class="copy" contenteditable="true" spellcheck="false">这段跑慢点，<br>免得你们<br>看不清我的新鞋。</div>
+
+          <div class="sign v">
+            <div class="s1">买到好品牌<span class="dot"></span>就来小红书</div>
+            <div class="s2">上小红书逛市集 → 1年1度购物狂欢 领券低至65折</div>
+            <div class="pill">小红书市集</div>
+          </div>
+
+          <div class="guides">
+            <div class="g" style="inset:0 15% 0 15%;"><b style="left:0;top:-30px;">左右边距 15%</b></div>
+            <div class="g" style="left:15%;top:576px;width:70%;height:538px;"><b style="right:0;top:-30px;">文字块 51–68% 宽</b></div>
+            <div class="g" style="left:0;right:0;bottom:0;height:300px;border-bottom:0;"><b style="left:50%;transform:translateX(-50%);top:-30px;">落款区 15.6%</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 横屏 -->
+    <div class="slot">
+      <div class="slot-tag"><span>横屏</span><span>1920 × 1080 · 字高 9.3%</span></div>
+      <div class="frame h">
+        <div class="board h" data-board>
+          <div class="copy" contenteditable="true" spellcheck="false">本来今天不跑步的，<br><span class="chip"></span>但是在小红书<br>买的新鞋到了。</div>
+
+          <div class="sign h">
+            <div class="pill">小红书市集</div>
+            <div class="s2">上小红书逛市集 → 1年1度购物狂欢 领券低至65折</div>
+            <div class="s1">买到好品牌<span class="dot"></span>就来小红书</div>
+          </div>
+
+          <div class="guides">
+            <div class="g" style="inset:0 15% 0 15%;"><b style="right:0;top:-34px;">左右边距 15%</b></div>
+            <div class="g" style="left:320px;top:240px;width:1200px;height:525px;"><b style="left:0;top:-34px;">文字块 62% 宽 · 12 字／行</b></div>
+            <div class="g" style="left:0;right:0;bottom:0;height:160px;border-bottom:0;"><b style="left:50%;transform:translateX(-50%);top:-34px;">落款区 15%</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 参数卡 -->
+  <div class="spec">
+    <h2>画面参数</h2>
+    <p class="sub">竖屏以 1080 宽稿为准，横屏以 1920 宽稿为准。投放到真实屏体时按「屏高 × 4.8%（竖）／9.3%（横）」换算字高；3:1 这类扁横屏屏高小，字高按 12%–14% 取。</p>
+    <table>
+      <thead><tr><th style="width:22%">项</th><th style="width:26%">值</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr><td>主底色</td><td><span class="swatch" style="background:#EDE3FA"></span><code>#EDE3FA</code></td><td>界面色而非广告色。白底＝海报语法，一眼归类为广告；纯黑＝发布会，太郑重</td></tr>
+        <tr><td>昼间底色</td><td><span class="swatch" style="background:#F2EAFC"></span><code>#F2EAFC</code></td><td>强环境光下屏体相对变暗，需提亮 3% 才不显脏</td></tr>
+        <tr><td>正文色</td><td><span class="swatch" style="background:#1F1D24"></span><code>#1F1D24</code></td><td>近黑带紫调。纯黑对比过硬像标题；同源色让整块软下来</td></tr>
+        <tr><td>辅助色</td><td><span class="swatch" style="background:#6B6570"></span><code>#6B6570</code></td><td>活动说明与落款小字，对比 4.5:1</td></tr>
+        <tr><td>品牌红</td><td><span class="swatch" style="background:#FF2442"></span><code>#FF2442</code></td><td>只出现在 logo 胶囊与 CTA 圆标，合计面积 ＜1%</td></tr>
+        <tr><td>字族／字重</td><td>思源黑体 · 苹方 SC ／ <code>400</code></td><td>Bold 是喊，Regular 是说。看不清靠加字号解决，不靠加字重</td></tr>
+        <tr><td>竖屏字高／行距</td><td><code>92px</code> ／ <code>1.95em</code></td><td>占屏高 4.8%。行距松，像一页没排完的稿</td></tr>
+        <tr><td>横屏字高／行距</td><td><code>100px</code> ／ <code>1.75em</code></td><td>占屏高 9.3%。行更长，行距需更紧，否则眼睛回扫会散</td></tr>
+        <tr><td>每行字数</td><td>6–8 字（竖）／10–14 字（横）</td><td>一行一口气读完，不换气</td></tr>
+        <tr><td>文字块垂直位置</td><td>顶边距 <code>576px</code>（30% 起）</td><td>不居中。居中就是海报构图；从 30% 起像文档</td></tr>
+        <tr><td>嵌图高度</td><td><code>1.4em</code>，句中</td><td>表情包语法。图与字同一条线流动，语境切到私人对话</td></tr>
+        <tr><td>落款区</td><td>竖 <code>300px</code> ／ 横 <code>160px</code></td><td>是签名不是标题，存在感低但位置固定</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <b>投真实屏体前先确认像素间距。</b>一个汉字至少需要 32 个像素高，笔画才分得开：P10 屏要求字高 ≥ 32cm，P16 屏要求 ≥ 52cm。按屏高 4.8% 算，P10 屏需要屏高 ≥ 6.7m，P16 屏需要 ≥ 10.8m。达不到就一行减字、字号提到 6%–7%，或者换媒介。
+    </div>
+  </div>
+
+</div>
+
+<script>
+  var stage = document.getElementById('stage');
+  var boards = document.querySelectorAll('[data-board]');
+
+  var btnGuides = document.getElementById('btn-guides');
+  btnGuides.addEventListener('click', function () {
+    var on = this.getAttribute('aria-pressed') === 'true';
+    this.setAttribute('aria-pressed', String(!on));
+    boards.forEach(function (b) { b.classList.toggle('show-guides', !on); });
+  });
+
+  var btnDay = document.getElementById('btn-day');
+  btnDay.addEventListener('click', function () {
+    var on = this.getAttribute('aria-pressed') === 'true';
+    this.setAttribute('aria-pressed', String(!on));
+    boards.forEach(function (b) {
+      b.style.background = !on ? '#F2EAFC' : '#EDE3FA';
+      b.style.color = !on ? '#14121A' : '#1F1D24';
+    });
+  });
+
+  var original = {};
+  boards.forEach(function (b, i) {
+    original[i] = b.querySelector('.copy').innerHTML;
+  });
+  document.getElementById('btn-reset').addEventListener('click', function () {
+    boards.forEach(function (b, i) {
+      b.querySelector('.copy').innerHTML = original[i];
+    });
+  });
+</script>
+</body>
+</html>

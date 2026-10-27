@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Frontend UIUX"
+  short_description: "界面设计纪律：预算声明→生成→量化自查；冗余与意符分开，「不舒服」先量化再改"
+  default_prompt: "使用 $jc-frontend-uiux 设计或修改界面。任务是："
+policy:
+  allow_implicit_invocation: true

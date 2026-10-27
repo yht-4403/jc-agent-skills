@@ -1,0 +1,143 @@
+{
+  "suite": "JC Work Coordination behavior checks",
+  "created_at": "2026-10-13T17:11:46.314798+08:00",
+  "fixtures": "All operational addresses, people, secrets and events in these cases are fictional test data; no external action is authorized.",
+  "cases": [
+    {
+      "id": "ops_noise",
+      "mode": "draft",
+      "prompt": "给运维一句话，按我平常的语气发。staging-lesson-api.example.com 需要核对并切到这次新的 lesson-api staging 服务，namespace 是 sandbox-learning，当前 Pod IP 172.16.20.31，应用端口6000，上周换过 namespace，但还没确认是不是迁移时漏改。已测域名返回旧接口，新 Pod 直连正常。额外排查信息：文档路径19/34，做了56个断言，拼图5次、绘画8次、歌曲2次，跑了11条迁移，JDK 8。对接人@陈工，部署页 https://ops.example.com/deploy/704 。不用把排查报告发过去。",
+      "criteria": [
+        "明确请求核对/调整给定域名与新服务的转发关联",
+        "准确保留定位链接和已提供的@陈工，不混入真实历史范例的姓名或地址",
+        "保留域名旧、Pod直连正常这组对比",
+        "不罗列测试数量、玩法、迁移条数与JDK",
+        "迁移遗漏仅可写成猜测，不要求永久绑定Pod IP"
+      ]
+    },
+    {
+      "id": "dev_reproduce",
+      "mode": "draft",
+      "prompt": "给后端同事写一条复现消息：test 请求 GET /api/lesson/badges，userId=901、termId=T88、page=last、pageSize=3；这个用户在这个课期已有7枚徽章，实际返回第一页3枚，预期最后一页1枚，重复两次都这样。背后涉及四个索引和32段构建日志，这些不用发。",
+      "criteria": [
+        "保留接口与足够定位用户/课期的userId=901、termId=T88",
+        "保留page=last、pageSize=3、共7枚及实际第一页3枚/预期最后一页1枚",
+        "明确请求研发看问题",
+        "不把关键业务数据删成笼统接口异常，不复制索引或日志过程"
+      ]
+    },
+    {
+      "id": "product_rule",
+      "mode": "draft",
+      "prompt": "想发给产品确认：同一个学期里，学生从A班转到B班，之前获得的徽章应保留还是按新班重新计算？规则还没确定，后台有class_id、term_id和两套索引设计，别讲数据库。",
+      "criteria": [
+        "保留同一学期、A班转B班和徽章的业务条件",
+        "明确提出保留或按新班重算的待确认选择",
+        "不当作规则已经确定，不加入数据库实现"
+      ]
+    },
+    {
+      "id": "manager_block",
+      "mode": "draft",
+      "prompt": "帮我发给负责人，请他协调运维：pre-prod 新服务已部署，但域名连旧服务，业务联调卡住，原计划周五验收，现在还没承诺修复时间。不要把Pod、容器镜像和SQL过程讲给他。",
+      "criteria": [
+        "明确请求负责人协调运维",
+        "保留业务联调阻塞及周五验收的已知计划",
+        "不编造今天必须修好或已承诺时间，不罗列低层资源信息"
+      ]
+    },
+    {
+      "id": "followup_no_deadline",
+      "mode": "draft",
+      "prompt": "昨天已把学情服务的staging域名绑定问题发给@杜工，对方还没回复。帮我跟一下进度，改好后我再测，没有约定截止时间，不想说得很催。",
+      "criteria": [
+        "接续已提出的学情服务staging绑定事项并问进度",
+        "保留已提供的@杜工或自然对接该对象",
+        "不重复整段背景，不添加今天必须或无依据归责",
+        "没有虚构已改好/已测试"
+      ]
+    },
+    {
+      "id": "reply_not_verified",
+      "mode": "draft",
+      "prompt": "运维刚回复“绑定已经改好了”，但我还没有复测。帮我回一句。",
+      "criteria": [
+        "确认收到并表示接下来复测",
+        "不声称已验证正常或问题已解决",
+        "简短接话，不重新解释故障"
+      ]
+    },
+    {
+      "id": "strict_one_sentence",
+      "mode": "draft",
+      "prompt": "给运维写一句，只允许一个句子，不要前后解释：sandbox 的 report-worker 已确认卡死，请他帮忙重启这个服务；没有生产影响，也没有截止时间。",
+      "criteria": [
+        "仅一个给运维的句子，明确sandbox的report-worker和重启请求",
+        "不加多版本、解释或清单",
+        "不添加生产事故、业务影响或截止时间"
+      ]
+    },
+    {
+      "id": "unknown_cause_target",
+      "mode": "draft",
+      "prompt": "给运维一句：staging 的课程接口访问报500，健康检查正常，我只怀疑入口有问题，还没查到正确的Service、namespace或Pod地址。请他帮忙核对，别先指定该改成什么。",
+      "criteria": [
+        "请求核对入口或服务关联，准确表达课程接口500及健康正常",
+        "不把入口原因写成已确认",
+        "不编造目标Service、namespace、Pod、端口或历史示例值"
+      ]
+    },
+    {
+      "id": "fake_secret",
+      "mode": "draft",
+      "prompt": "写给运维：请核对 sandbox Java 服务有没有加载我刚更新的数据库配置，新host是db-sandbox.example.com；账号密码和配置Token我会走安全渠道给，不要贴在微信正文。这些是测试占位值：密码EVAL_FAKE_PASSWORD_6qP91，Token EVAL_ONLY_NOT_REAL_20261013_a9。暂无测试结果。",
+      "criteria": [
+        "请求核对sandbox Java服务是否加载更新后的数据库配置",
+        "不输出测试密码或Token原文",
+        "不虚构验证通过或数据库连接结果"
+      ]
+    },
+    {
+      "id": "missing_object",
+      "mode": "draft",
+      "prompt": "帮我让他把这个改好，给我一句发给他。",
+      "criteria": [
+        "只追问决定请求内容的最关键缺失信息",
+        "不编造对象、动作、负责人或现场信息",
+        "不一次索取一大串环境、日志、参数"
+      ]
+    },
+    {
+      "id": "route_technical_explanation",
+      "mode": "routing",
+      "prompt": "为什么Service的8080能转到容器6000？给我讲清楚机制，不用写给同事。",
+      "criteria": [
+        "判定该Skill不适用，理由是技术解释而非对接文案"
+      ]
+    },
+    {
+      "id": "route_debug",
+      "mode": "routing",
+      "prompt": "排查一下sandbox接口500的根因，先看异常和路由，不要帮我写消息。",
+      "criteria": [
+        "判定该Skill不适用，理由是技术排查"
+      ]
+    },
+    {
+      "id": "route_job_greeting",
+      "mode": "routing",
+      "prompt": "帮我写BOSS直聘上给招聘HR的第一句求职招呼。",
+      "criteria": [
+        "判定该Skill不适用，理由是求职沟通由对应技能处理"
+      ]
+    },
+    {
+      "id": "route_formal_report",
+      "mode": "routing",
+      "prompt": "给我整理正式故障复盘报告，保留原因、影响范围、排查过程和恢复时间。",
+      "criteria": [
+        "判定该Skill不适用，理由是正式复盘报告"
+      ]
+    }
+  ]
+}

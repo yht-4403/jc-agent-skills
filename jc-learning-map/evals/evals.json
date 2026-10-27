@@ -1,0 +1,182 @@
+{
+  "skill_name": "jc-learning-map",
+  "baseline": {
+    "source": "2026-07-29 真实对话",
+    "observed_failures": [
+      "把入门地图展开成过深、过长的卡点树",
+      "使用方法论鲁棒化等过度学术命名",
+      "没有先区分快速入门、深度长文和大型资料建 Skill",
+      "把完整误解为一次穷举所有分支"
+    ]
+  },
+  "evals": [
+    {
+      "id": "P01",
+      "category": "positive",
+      "prompt": "用 $jc-learning-map 帮我梳理 SQL 优化。先给我全貌、主流程和两层卡点，让我知道遇到慢 SQL 应该从哪里开始。",
+      "should_trigger": true,
+      "expected_mode": "问题地图",
+      "assertions": [
+        "用大白话说明 SQL 优化解决什么问题",
+        "提供诊断主流程而不是索引知识百科",
+        "关键节点包含一级和二级卡点",
+        "二级卡点带第一步预案",
+        "总图是可快速扫读的紧凑索引，每个主节点只展示一个一级卡点和最多两个二级情况",
+        "不默认展开第三层原因",
+        "只有当前入口进行详细解释",
+        "给出当前入口或定位问题"
+      ]
+    },
+    {
+      "id": "P02",
+      "category": "positive",
+      "prompt": "我想学销售能力，但现在完全没有地图。先帮我梳理完整过程、每一环常见的两层卡点，以及我应该先练哪块，不要写成长篇课程。",
+      "should_trigger": true,
+      "expected_mode": "流程图与能力图混合",
+      "assertions": [
+        "展示销售结果产生的主要过程",
+        "没有机械照抄销售课程目录",
+        "每个关键节点只展示一个一级卡点和最多两个二级情况",
+        "没有把所有节点写成逐项讲解的巨大表格",
+        "总图简短，详细内容集中在当前入口",
+        "定位建议依赖用户当前信息",
+        "明确暂时可以忽略的部分"
+      ]
+    },
+    {
+      "id": "P03",
+      "category": "positive",
+      "prompt": "帮我画一张海外市场验证地图：整体怎么走、每一步最常卡在哪两层、不同卡点第一步做什么。",
+      "should_trigger": true,
+      "expected_mode": "验证流程图",
+      "assertions": [
+        "使用验证闭环而不是泛泛介绍海外市场",
+        "识别市场与政策信息的时效性",
+        "两层卡点后停止全图扩张",
+        "第一步预案能够指导收集证据"
+      ]
+    },
+    {
+      "id": "P04",
+      "category": "positive",
+      "prompt": "基于我给你的这本销售书，先做一张销售主流程和两层卡点地图。只处理我指定的资料，不用马上做成一套 Skills。",
+      "should_trigger": true,
+      "expected_mode": "指定资料地图",
+      "assertions": [
+        "说明实际读取范围",
+        "区分来源观点和 Agent 归纳",
+        "不把章节目录直接当地图",
+        "不误转成长期 Skill 工程"
+      ]
+    },
+    {
+      "id": "N01",
+      "category": "negative",
+      "prompt": "数据库索引到底是什么？给我一个简单例子。",
+      "should_trigger": false,
+      "expected_handler": "直接解释或 dbs-deconstruct",
+      "assertions": [
+        "不生成完整领域地图",
+        "直接回答概念含义和例子"
+      ]
+    },
+    {
+      "id": "N02",
+      "category": "negative",
+      "prompt": "这条 SQL 很慢，直接帮我分析执行计划并给优化建议。",
+      "should_trigger": false,
+      "expected_handler": "数据库或代码诊断能力",
+      "assertions": [
+        "直接解决具体 SQL 问题",
+        "不强迫用户先阅读全景地图"
+      ]
+    },
+    {
+      "id": "A01",
+      "category": "adjacent",
+      "prompt": "我想快速搞懂猎头行业，给我一篇完整深度拆解，要有内幕、案例、执行细节和场景模拟。",
+      "should_trigger": false,
+      "expected_handler": "domain-sprint",
+      "forbidden_handler": "jc-learning-map",
+      "assertions": [
+        "识别用户需要一次性深度长文",
+        "不把请求收缩成两层卡点地图"
+      ]
+    },
+    {
+      "id": "A02",
+      "category": "adjacent",
+      "prompt": "带我连续学习销售，每学完一篇我给反馈，你再调整下一篇。",
+      "should_trigger": false,
+      "expected_handler": "dbs-learning",
+      "forbidden_handler": "jc-learning-map",
+      "assertions": [
+        "识别连续自适应课程意图",
+        "不只交付一次性地图"
+      ]
+    },
+    {
+      "id": "A03",
+      "category": "adjacent",
+      "prompt": "我买了十几万字的销售宇宙全文，帮我全量处理并做成以后能长期调用的一套销售 Skills。",
+      "should_trigger": false,
+      "expected_handler": "domain-skill-factory 和 domain-skill-loop",
+      "forbidden_handler": "jc-learning-map 独立完成",
+      "assertions": [
+        "识别大型资料和长期 Skill 套件目标",
+        "不假装一次完成全量覆盖",
+        "转交领域资料工厂和批处理循环"
+      ]
+    },
+    {
+      "id": "A04",
+      "category": "adjacent",
+      "prompt": "用户需求这个词在产品、销售和市场嘴里分别是什么意思？帮我拆清楚。",
+      "should_trigger": false,
+      "expected_handler": "dbs-deconstruct",
+      "forbidden_handler": "jc-learning-map",
+      "assertions": [
+        "识别概念使用和定义问题",
+        "不生成领域主流程"
+      ]
+    },
+    {
+      "id": "F01",
+      "category": "first-use-ready",
+      "prompt": "用 $jc-learning-map 给我画一张内容营销学习地图。我刚开始做公众号，写了几篇但阅读量一直很低。",
+      "should_trigger": true,
+      "expected_mode": "能力图与问题地图混合",
+      "assertions": [
+        "用短价值说明区分地图与百科式长文",
+        "复用公众号和低阅读量背景，不重新询问已知信息",
+        "在同一回复开始画图并定位候选入口",
+        "出现全貌图、两层卡点、第一步预案和可检查的当前入口",
+        "不展示内部 Skill、文件或路由名称"
+      ]
+    },
+    {
+      "id": "F02",
+      "category": "first-use-missing",
+      "prompt": "使用 $jc-learning-map。",
+      "should_trigger": true,
+      "expected_mode": "最小输入",
+      "assertions": [
+        "用短价值说明讲清可获得的地图、卡点和当前入口",
+        "只询问主题和用途，不展示模式菜单",
+        "不承诺证据不足时仍能确定定位"
+      ]
+    },
+    {
+      "id": "F03",
+      "category": "follow-up",
+      "prompt": "继续展开刚才定位的第二层卡点。",
+      "should_trigger": true,
+      "expected_mode": "当前卡点深挖",
+      "assertions": [
+        "不重复首次价值说明",
+        "只深挖当前卡点，不扩写整张地图",
+        "给出区分信号、判断方法和下一步行动"
+      ]
+    }
+  ]
+}

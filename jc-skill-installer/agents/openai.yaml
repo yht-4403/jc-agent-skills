@@ -1,0 +1,4 @@
+interface:
+  display_name: "JC Skill Installer"
+  short_description: "搜索、版本管理并同步个人 Skill 库，覆盖 WorkBuddy、Kimi Work 和 Grok 等客户端"
+  default_prompt: "使用 $jc-skill-installer 为当前任务搜索合适的 Skill，或安装、启停、升级并同步我的 Skills。"

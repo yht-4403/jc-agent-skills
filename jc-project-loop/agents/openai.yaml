@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Project Loop"
+  short_description: "用本地任务账本持续推进、复核、恢复并验收长周期项目"
+  default_prompt: "使用 $jc-project-loop 初始化并推进这个长周期项目。"
+policy:
+  allow_implicit_invocation: false

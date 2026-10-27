@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Rich Doc Publisher"
+  short_description: "发布跨端富文档，并处理腾讯 MCP、协作、权限、版本与校验"
+  default_prompt: "使用 $jc-rich-doc-publisher 把这份内容排成适合手机和电脑阅读的富文档。"
+policy:
+  allow_implicit_invocation: false

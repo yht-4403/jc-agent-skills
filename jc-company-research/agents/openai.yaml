@@ -1,0 +1,4 @@
+interface:
+  display_name: "JC Company Research"
+  short_description: "公司调研倒推法：从要说的那句话反推查什么，出口播稿加证据底稿"
+  default_prompt: "使用 $jc-company-research 帮我调研这家公司。公司是："

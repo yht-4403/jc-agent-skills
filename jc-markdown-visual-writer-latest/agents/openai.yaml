@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Markdown Visual Writer Latest"
+  short_description: "在 Markdown 文档里用「主线 + 细节展开」画 Mermaid 图，视觉遵循 WorkBuddy 九色系"
+  default_prompt: "使用 $jc-markdown-visual-writer-latest 把这段复杂内容写得清楚易读。"
+policy:
+  allow_implicit_invocation: false

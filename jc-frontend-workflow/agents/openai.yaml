@@ -1,0 +1,6 @@
+interface:
+  display_name: "JC Frontend Workflow"
+  short_description: "前端重设计七步：看任务、拆参考、定方向、做原型、迭代、固化规则、分批落地"
+  default_prompt: "使用 $jc-frontend-workflow 推进本项目前端重设计，先读取现有页面、真实任务和已有记录，再从当前步骤继续。"
+policy:
+  allow_implicit_invocation: true
