@@ -105,13 +105,19 @@
 - [`jc-quiet-ad`](jc-quiet-ad/)：想做不像广告的品牌广告，所以做了它。
 - [`jc-client-howto-guide`](jc-client-howto-guide/)：产品交付了客户不会用，所以做了它。
 - [`jc-concept-deconstruct`](jc-concept-deconstruct/)：读完文章、课程想拆成能用的概念，所以做了它。
-- [`jc-rich-doc-publisher`](jc-rich-doc-publisher/)：长内容想在手机上也读着舒服，所以做了它。
+- [`jc-rich-doc-publisher`](jc-rich-doc-publisher/)：文章要发给客户或对外展示，想一键变成飞书、腾讯文档里排版好看的格式，所以做了它。依赖飞书 CLI 和腾讯文档 MCP，装前需要这两个工具。
 
 ## 想全装
 
 ```text
 克隆 https://github.com/yht-4403/jc-agent-skills ，把仓库里 jc- 开头的技能目录全部复制（或软链）到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完列出装了哪些、各自什么时候触发。
 ```
+
+## 这些 skill 是怎么做出来的
+
+做法只有一条主线：先把要解决的问题说清楚，再让 AI 去找这个专业领域历史上最好的解法——谁解决过、用什么理论、用什么工具，然后一比一复刻，详细到他们用什么工具我们就用什么工具。比如复刻一个人的语言习惯，就去找语言修辞学和刑侦语言鉴定的底层论文，而不是凭感觉总结。
+
+做出来之后不算完：写正例反例，跑多轮机器评测，按 V1、V2、V3 加 latest 的版本管理一路迭代，直到在日常工作里稳定好用。
 
 ## License
 
