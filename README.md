@@ -2,7 +2,7 @@
 
 规则塞进系统提示词，是越攒越管不住的。
 
-这个仓库是另一种做法：25 个 Agent Skill，各自只在任务相关时才加载。什么时候该用、怎么做、做成什么样算合格，写在各自的位置。写作、调研、学习、工作对接、前端设计都有，全部来自日常工作里的真实使用：某次输出翻车了，写下规则；规则太长，拆成按需读取的细节；需要稳定输出，改成脚本；改完跑回归用例，确认没退化。
+这个仓库是另一种做法：27 个 Agent Skill，各自只在任务相关时才加载。什么时候该用、怎么做、做成什么样算合格，写在各自的位置。写作、调研、学习、工作对接、前端设计都有，全部来自日常工作里的真实使用：某次输出翻车了，写下规则；规则太长，拆成按需读取的细节；需要稳定输出，改成脚本；改完跑回归用例，确认没退化。
 
 ## 一个技能如何进入工作
 
@@ -32,6 +32,19 @@ graph LR
 
 触发看 `description` 一句话；`SKILL.md` 只放主干，细节按需读取；每次修改跑 `evals/`，确认原本能过的用例没退化。
 
+## 按问题成套安装
+
+不想全装，就按遇到的问题成套拿。每套在 `bundles/` 里有一个 PROMPT.md，复制发给你的 AI，它自己克隆、安装、启用：
+
+| 你遇到的问题 | 装这套 | 包含的技能 | 一键提示词 |
+| --- | --- | --- | --- |
+| AI 说话假、套话多、一屏文字墙 | 去 AI 味核心 | `jc-no-ai-flavor-latest` | [bundles/core/PROMPT.md](bundles/core/PROMPT.md) |
+| 纯文字看不懂，想先看图 | 图先行 | `wb-visualizer-guide`、`jc-markdown-visual-writer-latest` | [bundles/visual/PROMPT.md](bundles/visual/PROMPT.md) |
+| 复杂机制、陌生行业听不懂 | 通俗讲解 | `jc-plain-explainer` | [bundles/explainer/PROMPT.md](bundles/explainer/PROMPT.md) |
+| 要写日报、周报、汇报 | 报告 | `jc-report` | [bundles/report/PROMPT.md](bundles/report/PROMPT.md) |
+
+「去 AI 味核心」是底座，后三套都假设它已装好。这四套联动解决同一件事：把 AI 的输出规范成 30 秒能看懂的人话。core 管留什么、顺序和文味，visual 管图，explainer 和 report 是两个高频场景的专项。
+
 ## 技能清单
 
 ### 写作与表达
@@ -39,6 +52,8 @@ graph LR
 | 技能 | 解决什么问题 |
 | --- | --- |
 | [`jc-voice`](jc-voice/) | 个人写作嗓音系统。写对外说明与对用户说话的内容时，按场景选定一种嗓音 |
+| [`jc-no-ai-flavor-latest`](jc-no-ai-flavor-latest/) | 默认输出契约与文风红线。先守住重要信息不丢，再定顺序和篇幅，最后用 16 条禁用清单扫掉 AI 味；目标 30 秒看懂 |
+| [`wb-visualizer-guide`](wb-visualizer-guide/) | 内联图表的完整视觉规范：九色系、SVG 画布、Chart.js、交互与插画。WorkBuddy 端直接用，也可移植到其他 Agent |
 | [`jc-site-copy`](jc-site-copy/) | 中文官网、落地页、定价页和界面文案。先判断页面类型，再按字数预算写 |
 | [`jc-knowledge-capture`](jc-knowledge-capture/) | 把对话、灵感、方案整理成可回顾的知识文档，或转成适合公开发布的直述体 |
 | [`jc-daily-thought-social-publisher-v5`](jc-daily-thought-social-publisher-v5/) | 把知识库长文改成单主题社媒文案 |

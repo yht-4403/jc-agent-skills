@@ -1,0 +1,7 @@
+interface:
+  display_name: "JC No AI Flavor"
+  short_description: "默认输出契约与文风红线：30 秒看懂、先守内容再定顺序篇幅、16 条禁用清单扫文味"
+  default_prompt: "使用 $jc-no-ai-flavor-latest，按 30 秒契约组织回复，并检查这段文字的 AI 味。"
+
+policy:
+  allow_implicit_invocation: true
