@@ -1,0 +1,4 @@
+interface:
+  display_name: "Team Git Workflow"
+  short_description: "通用团队 Git 协作与线性历史规范"
+  default_prompt: "Use $team-git-workflow to prepare a safe branch, commit, rebase, merge, or PR workflow for this repository."

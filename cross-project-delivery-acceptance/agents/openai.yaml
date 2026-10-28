@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cross-Project Delivery Acceptance"
+  short_description: "从设计文档到真实链路、证据与发布结论的通用验收流程"
+  default_prompt: "使用 $cross-project-delivery-acceptance 独立验收这个跨项目功能，并输出业务完成度、缺陷和发布结论。"

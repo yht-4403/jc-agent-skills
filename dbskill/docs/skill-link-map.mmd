@@ -1,0 +1,43 @@
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "background": "#ffffff",
+    "primaryColor": "#ffffff",
+    "primaryTextColor": "#111111",
+    "primaryBorderColor": "#111111",
+    "lineColor": "#111111",
+    "secondaryColor": "#ffffff",
+    "secondaryTextColor": "#111111",
+    "secondaryBorderColor": "#111111",
+    "tertiaryColor": "#ffffff",
+    "tertiaryTextColor": "#111111",
+    "tertiaryBorderColor": "#111111",
+    "clusterBkg": "#ffffff",
+    "clusterBorder": "#111111",
+    "defaultLinkColor": "#111111",
+    "fontFamily": "Helvetica, Arial, PingFang SC, Microsoft YaHei, sans-serif"
+  },
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis",
+    "nodeSpacing": 32,
+    "rankSpacing": 48
+  }
+}}%%
+
+%% 本文件保留编排逻辑草图；README 中的正式 4:3 图示为手工维护的 skill-link-map-4x3.svg。
+
+flowchart TD
+    A["问题、材料或反馈"] --> B["/dbs 恢复目标、事实和未决问题"]
+    B --> C{"当前怎样推进？"}
+    C --> D["直接处理或读取适合的 Skill"]
+    C --> E["补充关键事实或请用户选择方向"]
+    C --> F["组合互补能力或对照不同方法"]
+    D --> G["在当前对话中工作"]
+    E --> G
+    F --> G
+    G --> H{"目标与方法状态"}
+    H -->|当前任务未完成，方法仍匹配| I["继续当前 Skill 或处理方式"]
+    I --> G
+    H -->|前提失效或方法不匹配| B
+    H -->|当前目标已完成| J["交付结果并结束"]

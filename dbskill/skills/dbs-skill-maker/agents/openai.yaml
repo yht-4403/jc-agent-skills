@@ -1,0 +1,4 @@
+interface:
+  display_name: "dbs-skill-maker（Skill 制作与改进）"
+  short_description: "制作新 Skill 或改进已有 Skill，先给方案再改，并用真实任务对比验证"
+  default_prompt: "使用 $dbs-skill-maker 帮我把反复遇到的问题做成 Skill，或根据真实问题改进已有 Skill。"

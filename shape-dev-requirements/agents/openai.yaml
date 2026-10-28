@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dev Requirements Shaper"
+  short_description: "分轮批量提问并提供推荐答案，快速查全业务与开发对接需求"
+  default_prompt: "使用 $shape-dev-requirements 帮我从零梳理需求。我现在只有一个模糊想法："

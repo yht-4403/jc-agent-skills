@@ -1,0 +1,6 @@
+interface:
+  display_name: "Guangzhi B2B Sales"
+  short_description: "广智 B2B 大客户销售方法论：客户卡点诊断、沟通潜台词、跟进节奏、现场结账、报价与压价、逼单、三问验证、领作业、脱敏与动作先行，共 9 张内部能力卡 + 1 份报价法争议卡"
+  default_prompt: "使用 $guangzhi-b2b-sales 处理这个 B2B 客户问题：先按 hub 路由表判断该用哪张能力卡，再按该卡的 R/I/A1/A2/E/B 给出判断与可执行动作。"
+policy:
+  allow_implicit_invocation: false

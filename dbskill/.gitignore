@@ -1,0 +1,62 @@
+# 不发 GitHub
+chatbot/
+plans/
+.private/
+private/
+skills 版本管理/
+社媒推广/
+学习课题/
+.DS_Store
+.trash/
+.obsidian/
+books/dontbesilent-open-tweets/
+AGENTS.md
+CLAUDE.md
+SOURCE_OF_TRUTH.md
+!skills/dbs-content-system/scaffold/root/AGENTS.md
+!skills/dbs-content-system/scaffold/root/CLAUDE.md
+!skills/dbs-content-system/scaffold/root/SOURCE_OF_TRUTH.md
+dist/
+releases/
+
+# 第三方渠道本地适配包（不发 GitHub）
+skillhub/
+workbuddy/
+integrations/deepseek-harness/
+
+# 知识库：只发 Skill 需要的部分
+知识库/legacy/
+知识库/主题索引/
+知识库/_预处理/
+
+# autoresearch 实验目录
+autoresearch/
+
+# beta skill：本地私有，不发 GitHub
+skills/dbs-beta-*/
+
+# private skill：长期仅限本地，不发 GitHub
+skills/dbs-private-*/
+/dbs-private-*
+skills/dbs/references/local.md
+skills/dbs/scripts/list-local-skills.py
+
+# 本机桥接与 Python 缓存
+scripts/setup-symlinks.sh
+tools/__pycache__/
+
+# 社媒发布预览与导出
+*_更新公告_微信公众号版.html
+*更新公告_微信公众号版.html
+公众号HTML输出/
+内容资产工程系统_微信公众号版.html
+tools/build-open-tweet-collection.mjs
+tools/build-xiaohongshu-upload.sh
+
+# 仅供本机手动验证的样本
+tests/
+skills/*/evals/
+
+# Python generated files
+__pycache__/
+*.pyc

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Impeccable 长周期重构编排器"
+  short_description: "用计划文档推进长期前端重构"
+  default_prompt: "使用 $impeccable-redesign-orchestrator，帮我规划并执行一个长期前端重构，过程中持续维护 todo 文档。"
+policy:
+  allow_implicit_invocation: true

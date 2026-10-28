@@ -51,8 +51,8 @@
     <text x="666" y="116" font-size="12" fill="#854F0B">调研越查越散、录音堆着</text>
 
     <rect x="650" y="180" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
-    <text x="666" y="202" font-size="14" font-weight="500" fill="#633806">前端套</text>
-    <text x="666" y="220" font-size="12" fill="#854F0B">界面乱又说不出哪不对</text>
+    <text x="666" y="202" font-size="14" font-weight="500" fill="#633806">产品体验套</text>
+    <text x="666" y="220" font-size="12" fill="#854F0B">先理体验流程，再动手开发</text>
 
     <rect x="650" y="284" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
     <text x="666" y="306" font-size="14" font-weight="500" fill="#633806">技能工程套</text>

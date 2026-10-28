@@ -1,0 +1,7 @@
+interface:
+  display_name: "领域 Skill 批处理 Loop"
+  short_description: "让长资料按批抽取、独立复核、记录进度并在证据门前停止"
+  default_prompt: "使用 $domain-skill-loop 按批推进这个领域 Skill 工程，直到满足停止条件。"
+
+policy:
+  allow_implicit_invocation: true

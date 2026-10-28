@@ -1,0 +1,153 @@
+---
+name: product-hunt-playbook
+version: 1.7.0
+description: |
+  It's 11pm before your launch. Your PH page is ready but you have no idea what actually moves the ranking algorithm. Upvotes? Comments? Time-of-day? This is the hour-by-hour operations manual from someone who's coached 30+ #1 finishes.
+
+  What's inside:
+  • Ranking algorithm deep-dive (it's not just upvotes — weighted factors decoded)
+  • Launch day minute-by-minute checklist (PST timing, first 3 hours are critical)
+  • Voter mobilization strategies (ethical, anti-spam-safe approaches)
+  • Asset preparation templates (gallery, tagline ≤60 chars, maker comments)
+  • Post-launch 72h momentum plan (convert PH traffic → retained users)
+
+  Built from: 30+ PH #1 daily wins, 10+ weekly top 3, 2 monthly top 5. 3,000-5,000+ upvotes per launch.
+
+  Triggers: "Product Hunt" | "PH launch" | "Product Hunt #1" | "PH ranking" | "Product Hunt strategy" | "PH upvotes" | "launch day" | "PH打榜" | "Product Hunt攻略" | "PH ranking algorithm"
+source: https://github.com/Gingiris-1031/gingiris-skills/tree/main/skills/product-hunt-playbook
+tags:
+  - product-hunt
+  - launch
+  - ph-strategy
+  - daily-1
+  - hunter
+  - upvotes
+  - product-launch
+  - startup-launch
+  - makers
+  - go-to-market
+  - claude-code
+  - ai-agent-skill
+  - agent-skill
+  - latest
+---
+
+## ⚠️ 2C 产品慎用 Product Hunt
+
+本 skill 默认 dev / maker / B2B 受众。**2C 消费品 / 教育 / 应用 / 游戏**：Product Hunt 受众是 maker/科技人，与普通消费者错配、ROI 极低——最多发一次拿个 badge。请把精力换到 **垂类社区（Reddit / 小红书 / 知乎 / Naver 카페）+ 短视频（TikTok / 抖音 / YouTube）+ 垂直 KOL**，并用"免费产品当钩子"做转化。完整 2C 渠道数据库（各国 MAU + 公开来源）+ 三路 Launch 分叉见 → `gingiris-seo-geo/references/2c-adaptation.md`（及 `gingiris-launch`）。
+
+---
+
+## 📦 Install
+
+```bash
+clawhub install product-hunt-playbook
+```
+
+**What you get after installing:**
+- 24-hour battle plan with hour-by-hour tactics for launch day
+- Ranking algorithm deep-dive — weighted factors decoded (it's not just upvotes)
+- Post-launch 72h momentum plan to convert PH traffic into retained users
+
+---
+
+# Product Hunt Launch Playbook
+
+> 🌍 **Language / 语言**: [中文](#中文版) | [English](references/en/README.md) | [日本語](references/ja/README.md) | [한국어](references/ko/README.md)
+
+> **30x Daily #1 | 3x Weekly #1 | 1x Monthly #1**
+
+## What You Get
+
+- 📅 **24-hour battle plan** — hour-by-hour tactics for launch day
+- 🎯 **Ranking algorithm insights** — how PH ranking actually works
+- 👥 **Community mobilization** — activate your network without violating rules
+- 💬 **Maker comments strategy** — engaging with voters effectively
+- 📊 **Post-launch momentum** — converting PH traffic to users
+
+## 📚 Free Resources
+
+**GitHub Playbook (Free):**
+```bash
+clawhub install gingiris-launch
+```
+Or read: [Gingiris Launch Playbook](https://github.com/Gingiris-1031/gingiris-skills/tree/main/skills/gingiris-launch)
+
+## 💎 Premium Deep-Dive
+
+**[Product Hunt Launch Action Guide](https://gingiris.gumroad.com/l/zxamur)** — ¥99
+- Complete hour-by-hour timeline
+- Hunter selection framework
+- Community mobilization templates
+- Post-launch conversion playbook
+
+**[Complete Launch Bundle](https://gingiris.gumroad.com/l/gingiris-complete-global-launch-bundle)** — All 4 playbooks
+
+## 🎯 1-on-1 Launch Coaching
+
+**Work directly with Iris (30x PH #1 Winner, AFFiNE Co-founder):**
+
+| Service | Price | Best For |
+|---------|-------|----------|
+| 30 min session | ¥800 | Quick launch review |
+| 60 min session | ¥1500 | Full strategy session |
+| Monthly retainer | ¥7000/mo | Ongoing launch support |
+
+👉 **Book now: [gingiris.tools/services](https://gingiris.tools)**
+
+## Launch-Day Ops Addendum (2026 field data)
+
+### Hour-by-hour support hygiene
+
+1. Watch support **quality and rate**, not just the total. Historical launches were reviewed in roughly two-hour windows; abrupt bursts and low-context accounts were more likely to be removed. Treat ~100 upvotes/hour as an operational warning line, not an algorithm guarantee.
+2. If the count drops, pause amplification and audit sources. Do not compensate with another blast.
+3. Ask only real users and existing community members to visit voluntarily and leave an authentic comment. Never buy accounts or votes, coordinate vote exchanges, conceal identity/network origin, or instruct supporters to evade platform controls.
+
+### Decide which badge you're buying before you spend
+
+Daily, weekly and monthly are not the same prize: weekly exposure ≈ 7x daily, monthly ≈ 30x. Aiming monthly → launch the second or third Tuesday of the month. Only need the daily badge → Friday–Sunday competition is thinner.
+
+### Budget and fit reality check
+
+- Do not infer a universal spend-to-vote rate. Historical outcomes varied by audience fit, account quality, assets, timing and platform review.
+- With a small budget, redirect effort: the field notes found that roughly ten relevant X KOC collaborations often beat a PH-only push on registrations. Historical directional benchmarks were PH exposure→upvote around 1% and Reddit OSS exposure→star around 5–8%; validate against your own cohort before budgeting.
+- One anonymized field case (an AI Agent product, 2025-12): a 500K-visit launch day engineered across Twitter/Reddit/YouTube/groups produced ~800 signups at $6.25 CAC. Traffic ≠ conversion — plan the funnel, not just the spike.
+- AFFiNE Apple Notes case (2024-02 launch): a three-person operations team coordinated 30 Twitter/LinkedIn KOLs and 24-hour multi-channel distribution. The project note reports 700K+ impressions and 1,000+ upvotes in 24 hours, monthly #8 within 96 hours, plus daily #2 and weekly #2. Treat these as self-reported historical figures—not a vote-per-KOL benchmark or causal guarantee.
+
+### Split launch day and leaderboard day
+
+Route half your amplifiers to the website on announcement day, the other half to PH on badge day. Cramming both goals into 24 hours makes each dilute the other.
+
+## Evidence-backed operating sequence
+
+1. **T−21 to T−14:** make the maker profile credible through normal participation; finalize positioning and audience fit.
+2. **T−14 to T−7:** create Coming Soon, select a hunter only if their audience/feature access helps, and review every asset yourself. A hunter is not a source of votes.
+3. **T−7 to T−1:** observe recent competition for 1–3 weeks; prepare the maker comment, FAQ, demo, community destination and per-channel UTMs.
+4. **Launch day:** publish the first maker comment with the offer and community destination; answer questions; monitor source-level visits, activations and suspicious spikes every two hours.
+5. **T+1 to T+7:** move B2C leads into Discord/forum and B2B leads into Slack/community or a qualified demo flow. Report visits → signup → activation → retained/paid, not badge alone.
+
+Historical planning heuristics: weekly visibility was roughly 7× daily and monthly roughly 30×; use the second/third Tuesday when attempting a monthly run, or Friday–Sunday when the goal is a less competitive daily launch. These are case observations, not current PH guarantees.
+
+Source notes and field-case boundaries: `references/iris-field-notes.md`.
+
+## Related Skills
+
+- [gingiris-launch](https://github.com/Gingiris-1031/gingiris-skills/tree/main/skills/gingiris-launch) — Full GTM playbook
+- [gingiris-opensource](https://github.com/Gingiris-1031/gingiris-skills/tree/main/skills/gingiris-opensource) — OSS marketing
+- [gingiris-b2b-growth](https://github.com/Gingiris-1031/gingiris-skills/tree/main/skills/gingiris-b2b-growth) — B2B SaaS growth
+
+---
+
+*Author: Iris (生姜iris) | [gingiris.tools](https://gingiris.tools)*
+
+---
+
+## 🔗 About the Author
+
+**Iris Wei** — Growth consultant for 150+ AI startups. Ex-COO at AFFiNE (69K GitHub stars).
+
+- 🐦 Twitter: [@WeiYipei](https://twitter.com/WeiYipei) — Daily growth tactics
+- 💬 Consulting: [@Iris_carrot on Telegram](https://t.me/Iris_carrot)
+- 🛒 Premium (templates + case studies): [Get on Gumroad](https://gingiris.gumroad.com/l/zxamur)
+- 📦 Full Bundle ($249): [All 5 Playbooks](https://gingiris.gumroad.com/l/gingiris-complete-global-launch-bundle)
+- 📚 40+ Free Playbooks: [gingiris.tools/skills](https://gingiris.tools/skills/)

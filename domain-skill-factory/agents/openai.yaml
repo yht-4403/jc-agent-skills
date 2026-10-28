@@ -1,0 +1,4 @@
+interface:
+  display_name: "领域 Skill 工厂"
+  short_description: "把大型资料整理成有方法论、知识地图和执行能力的 Skill 套件"
+  default_prompt: "使用 $domain-skill-factory 从这批资料中提炼领域方法，并构建可使用的 Skill 套件。"

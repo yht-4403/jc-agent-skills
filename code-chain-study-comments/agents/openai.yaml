@@ -1,0 +1,7 @@
+interface:
+  display_name: "Code Chain Study Comments"
+  short_description: "沿真实源码追踪完整功能链路，并生成适合小白学习的高密度注释"
+  default_prompt: "使用 $code-chain-study-comments 从入口一路追到后端和数据层，结合真实源码讲懂这条功能链路。"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,88 @@
+name: Main Integrity Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 已下线 Skill 的版本指纹需要完整 Git 历史
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pinned Claude Code CLI
+        run: npm install --global @anthropic-ai/claude-code@2.1.158
+
+      - name: Validate marketplace manifest
+        run: |
+          claude plugin validate .
+          python3 tools/check-marketplace-scope.py
+          python3 tools/check-skill-routing-contract.py
+          python3 tools/sync-shared-references.py --check
+          python3 tools/check-archive-contract.py
+          python3 tools/test-archive-contract.py
+          python3 tools/test-skill-routing-contract.py
+          python3 tools/test-skill-discovery.py
+          python3 tools/check-skill-metadata.py
+          python3 tools/check-skill-interface-metadata.py .
+          python3 tools/check-skill-handoff.py --require-all
+          python3 tools/test-skill-handoff.py
+          python3 tools/check-numbered-prompts.py .
+          python3 tools/test-numbered-prompts.py
+          python3 skills/dbs-human-dispatch/scripts/test_dispatch.py
+
+      - name: Verify release version and update contract
+        run: |
+          python3 tools/check-release-versions.py
+          python3 tools/check-plugin-update-contract.py
+          python3 tools/update-retired-skills.py --check
+          python3 tools/test-retired-skills-cleanup.py
+          bash tools/test-dbs-update-check.sh
+          bash tools/test-dbs-install-skill.sh
+          bash tools/test-dbs-install-skill-windows-mock.sh
+
+  verify-windows-junctions:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Windows Junction install lifecycle
+        shell: bash
+        run: bash tools/test-dbs-install-skill-windows.sh
+
+  verify-video-navigation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install video and font dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+          python -m pip install pillow
+      - name: Validate navigation and render synthetic videos
+        env:
+          NAV_TEST_FONT_REGULAR: /usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc
+          NAV_TEST_FONT_BOLD: /usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc
+        run: |
+          python skills/dbs-video-navigation/scripts/navigation.py doctor
+          python skills/dbs-video-navigation/scripts/test_navigation.py
+          python skills/dbs-video-navigation/scripts/test_navigation.py --render "$RUNNER_TEMP/navigation-smoke"

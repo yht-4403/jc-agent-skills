@@ -1,0 +1,14 @@
+{
+  "scene_id": "SCN-001",
+  "name": "用户会说的具体问题",
+  "stage_id": "STG-01",
+  "trigger": ["能够识别这个问题的典型信号"],
+  "goal": "这个场景主要解决什么",
+  "required_inputs": ["真正会改变判断的信息"],
+  "decisions": ["主要判断或分支"],
+  "workflow": ["理解情况", "应用方法", "给出结果"],
+  "pitfalls": ["常见误用"],
+  "output_contract": ["适合该任务的结果形态"],
+  "atom_ids": ["ATM-000001"],
+  "skill": "example-skill"
+}

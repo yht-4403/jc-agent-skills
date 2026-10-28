@@ -19,6 +19,21 @@
 
 验证：随便问个复杂问题，看它是不是先给结论、段落变短。
 
+### 做产品先理体验流程：产品体验套
+
+我们的理念：先把用户体验流程梳理清楚，所有流程想明白了，再进入详细开发和决策。
+
+- [`about-face-4`](about-face-4/)：Cooper 的目标导向设计，动手前把目标、场景、体验流程想清楚。
+- [`shape-dev-requirements`](shape-dev-requirements/)：开发对接前，把业务背景、目标和关键约束问透。
+- [`jc-frontend-uiux`](jc-frontend-uiux/)：进入设计后，先定设计预算，生成后照清单自查。
+- [`jc-frontend-workflow`](jc-frontend-workflow/)：整体重设计时，先出独立原型，再分批迁入正式代码。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 about-face-4、shape-dev-requirements、jc-frontend-uiux、jc-frontend-workflow 这四个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+```
+
+验证：让它做一个页面，看它是不是先问目标和用户流程，而不是直接甩代码。
+
 ### 复杂机制听不懂：通俗讲解套
 
 - [`jc-plain-explainer`](jc-plain-explainer/)：问机制原理时 AI 净说术语，所以做了它。它用一个具体例子带你走完一遍真实过程。
@@ -79,15 +94,6 @@
 克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-find-standard-answer、jc-company-research、jc-audio-transcriber 这三个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么、需要什么环境。
 ```
 
-### 做前端设计：前端套
-
-- [`jc-frontend-uiux`](jc-frontend-uiux/)：AI 生成的界面看着乱又说不出哪不对，所以做了它。动手前先定设计预算，生成后照清单自查。
-- [`jc-frontend-workflow`](jc-frontend-workflow/)：想整体重做设计又怕改崩现有代码，所以做了它。
-
-```text
-克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-frontend-uiux、jc-frontend-workflow 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
-```
-
 ### 想自己写 skill：技能工程套
 
 - [`jc-skills-creator`](jc-skills-creator/)：想写 skill 但不知道值不值得写、怎么写，所以做了它。
@@ -113,6 +119,25 @@
 ```text
 克隆 https://github.com/yht-4403/jc-agent-skills ，把仓库里 jc- 开头的技能目录全部复制（或软链）到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完列出装了哪些、各自什么时候触发。
 ```
+
+## 附录：本地还收集了什么
+
+除了上面 27 个 jc 系 skill，本地库还收了约 200 个。按类整理，本体都在仓库里，点链接就能看：
+
+| 类别 | 解决什么 | 数量 | 代表 |
+| --- | --- | --- | --- |
+| [gingiris 增长实战手册](gingiris-skills/) | 增长全链路 SOP：UGC 矩阵、用户访谈、SEO/GEO、KOL 投放、Product Hunt 发布、GTM | 61 | gingiris-ugc-matrix、gingiris-user-interview |
+| [dbskill 内容方法论](dbskill/) | 内容创作、传播、拆解的成套打法 | 35 | dbs、dbs-deconstruct |
+| [Matt Pocock 工程实践](mattpocock-skills/) | TS 和前端工程：TDD、代码评审、调试 | 17 | tdd、code-review |
+| 营销增长套件 | 转化优化、SEO、邮件、定价、广告 | 32 | [pricing-strategy](pricing-strategy/)、[seo-audit](seo-audit/) |
+| 工程类 | 架构、后端、测试、部署 | 21 | [clean-architecture](clean-architecture/)、[playwright-skill](playwright-skill/) |
+| 设计类 | 品牌、配色、界面评审 | 19 | [better-colors](better-colors/)、[impeccable](impeccable/) |
+| GSAP 官方 | 网页动画 | 8 | [gsap-core](gsap-core/) |
+| [广智销售宇宙](guangzhi-b2b-sales/) | B2B 销售全流程：商机跟进、通话复盘、100 场景话术 | 4 | guangzhi-b2b-sales、sales-script-system |
+
+广智销售宇宙是我们用 [`domain-skill-factory`](domain-skill-factory/)（配套批处理 [`domain-skill-loop`](domain-skill-loop/)）把《广智销售宇宙》整本书蒸馏出来的：喂书进去，产出带原文依据的知识地图和场景话术。想蒸馏自己的书，装这两个。
+
+来源说明：Matt Pocock 系列原版在 GitHub（mattpocock/skills），GSAP 是官方技能，其余为社区收集，部分原作者不明。
 
 ## 这些 skill 是怎么做出来的
 

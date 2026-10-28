@@ -1,0 +1,6 @@
+interface:
+  display_name: "Daring Design Iteration"
+  short_description: "以世界顶级设计水准大胆重塑网页，并通过真实验证持续去除 AI 味"
+  default_prompt: "使用 $daring-design-iteration，把自己当成世界顶级独立设计团队，大胆重做一版我的网站；不要走安全路线，拿出能力上限，并用截图复盘和真实浏览器验证打磨到可交付。"
+policy:
+  allow_implicit_invocation: true

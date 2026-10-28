@@ -1,0 +1,8 @@
+{
+  "goal": "全部目标文本块完成独立复核，并通过领域 Skill 发布校验",
+  "batch_size": 5,
+  "max_retries": 2,
+  "max_batches": 100,
+  "gates": ["sample", "80", "100"],
+  "review_mode": "independent"
+}

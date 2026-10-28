@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Messaging Design"
+  short_description: "16 messaging app design systems for native UI"
+  default_prompt: "Use $ios-messaging-design to select a messaging app design reference and map it into my project."

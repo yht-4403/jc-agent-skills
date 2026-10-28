@@ -1,0 +1,4 @@
+interface:
+  display_name: "非开发者 Web 项目教练"
+  short_description: "用业务语言搭建结构清晰、安全且可交接的完整 Web 项目"
+  default_prompt: "使用 $nondev-web-builder 帮我从想法开始搭建并验收这个 Web 项目。"

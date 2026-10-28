@@ -1,0 +1,6 @@
+interface:
+  display_name: "后端并发评估"
+  short_description: "评估后端并发、压测与上线风险"
+  default_prompt: "使用 $backend-concurrency-audit 分析这个后端项目的并发能力、压测方案和上线风险。"
+policy:
+  allow_implicit_invocation: true

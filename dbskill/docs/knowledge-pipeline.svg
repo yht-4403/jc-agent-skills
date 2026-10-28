@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">dbskill 知识来源图</title>
+  <desc id="desc">dbskill 从 16152 条公开推文中筛选和结构化出 4176 个知识原子，并将方法沉淀为 33 个当前业务 Skill、2 个 deprecated 旧入口和 1 个系统更新入口。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .eyebrow { font-size: 16px; font-weight: 700; letter-spacing: 1.8px; fill: #2563EB; }
+      .title { font-size: 38px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 18px; font-weight: 400; fill: #64748B; }
+      .index { font-size: 14px; font-weight: 700; fill: #94A3B8; }
+      .index-inverse { font-size: 14px; font-weight: 700; fill: #BFDBFE; }
+      .label { font-size: 20px; font-weight: 700; fill: #0F172A; }
+      .label-inverse { font-size: 20px; font-weight: 700; fill: #FFFFFF; }
+      .number { font-size: 44px; font-weight: 700; fill: #0F172A; }
+      .number-inverse { font-size: 42px; font-weight: 700; fill: #FFFFFF; }
+      .body { font-size: 16px; font-weight: 400; fill: #64748B; }
+      .body-inverse { font-size: 16px; font-weight: 400; fill: #DBEAFE; }
+      .pill { font-size: 14px; font-weight: 700; fill: #2563EB; }
+      .asset-label { font-size: 17px; font-weight: 700; fill: #0F172A; }
+      .asset-body { font-size: 15px; font-weight: 400; fill: #64748B; }
+      .node { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 1.5; }
+      .node-soft { fill: #EFF6FF; stroke: #93C5FD; stroke-width: 1.5; }
+      .node-strong { fill: #2563EB; stroke: #2563EB; stroke-width: 1.5; }
+      .line { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-linecap: round; marker-end: url(#arrow); }
+      .footer { font-size: 16px; font-weight: 600; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="#F8FAFC"/>
+  <rect x="72" y="68" width="40" height="6" rx="3" fill="#2563EB"/>
+  <text class="eyebrow" x="128" y="78">DBSKILL · 知识来源</text>
+  <text class="title" x="72" y="137">把长期内容积累变成可调用能力</text>
+  <text class="subtitle" x="72" y="177">公开内容经过筛选、拆分和标注，最终进入知识库与正式 Skill。</text>
+
+  <rect class="node" x="72" y="250" width="236" height="244" rx="18"/>
+  <text class="index" x="96" y="282">01 · SOURCE</text>
+  <text class="label" x="96" y="326">公开推文</text>
+  <text class="number" x="96" y="388">16,152</text>
+  <text class="body" x="96" y="430">dontbesilent 长期内容积累</text>
+  <text class="body" x="96" y="458">持续提供事实、判断和方法</text>
+
+  <path class="line" d="M308 372 H347"/>
+
+  <rect class="node-soft" x="356" y="250" width="236" height="244" rx="18"/>
+  <text class="index" x="380" y="282">02 · PROCESS</text>
+  <text class="label" x="380" y="326">知识结构化</text>
+  <rect x="380" y="354" width="72" height="34" rx="17" fill="#DBEAFE"/>
+  <rect x="460" y="354" width="72" height="34" rx="17" fill="#DBEAFE"/>
+  <rect x="380" y="398" width="72" height="34" rx="17" fill="#DBEAFE"/>
+  <text class="pill" x="416" y="377" text-anchor="middle">筛选</text>
+  <text class="pill" x="496" y="377" text-anchor="middle">拆分</text>
+  <text class="pill" x="416" y="421" text-anchor="middle">标注</text>
+  <text class="body" x="380" y="462">保留可检索、可引用的内容</text>
+
+  <path class="line" d="M592 372 H631"/>
+
+  <rect class="node" x="640" y="250" width="236" height="244" rx="18"/>
+  <text class="index" x="664" y="282">03 · ATOMS</text>
+  <text class="label" x="664" y="326">知识原子</text>
+  <text class="number" x="664" y="388">4,176</text>
+  <text class="body" x="664" y="430">可检索、可引用、可重组</text>
+  <text class="body" x="664" y="458">形成稳定的知识底座</text>
+
+  <path class="line" d="M876 372 H915"/>
+
+  <rect class="node-strong" x="924" y="250" width="204" height="244" rx="18"/>
+  <text class="index-inverse" x="948" y="282">04 · SKILLS</text>
+  <text class="label-inverse" x="948" y="326">可调用能力</text>
+  <text class="number-inverse" x="948" y="386">36</text>
+  <text class="body-inverse" x="948" y="426">33 个当前业务 Skill</text>
+  <text class="body-inverse" x="948" y="456">1 个系统更新入口</text>
+
+  <text class="eyebrow" x="72" y="565">公开资产</text>
+
+  <rect class="node" x="72" y="596" width="320" height="132" rx="18"/>
+  <circle cx="102" cy="630" r="8" fill="#2563EB"/>
+  <text class="asset-label" x="124" y="636">atoms.jsonl</text>
+  <text class="asset-body" x="96" y="677">结构化知识原子的机器可读数据</text>
+  <text class="asset-body" x="96" y="703">适合搜索、分析与 RAG</text>
+
+  <rect class="node" x="440" y="596" width="320" height="132" rx="18"/>
+  <circle cx="470" cy="630" r="8" fill="#2563EB"/>
+  <text class="asset-label" x="492" y="636">Skill 知识包</text>
+  <text class="asset-body" x="464" y="677">按能力整理的方法、边界和案例</text>
+  <text class="asset-body" x="464" y="703">支持稳定调用与持续维护</text>
+
+  <rect class="node" x="808" y="596" width="320" height="132" rx="18"/>
+  <circle cx="838" cy="630" r="8" fill="#2563EB"/>
+  <text class="asset-label" x="860" y="636">高频概念词典</text>
+  <text class="asset-body" x="832" y="677">统一核心概念的定义与使用方式</text>
+  <text class="asset-body" x="832" y="703">减少多次调用中的语义漂移</text>
+
+  <rect x="72" y="798" width="1056" height="58" rx="14" fill="#E2E8F0"/>
+  <circle cx="101" cy="827" r="7" fill="#2563EB"/>
+  <text class="footer" x="120" y="833">从公开内容到正式 Skill，每一层都保留可检查、可更新的中间资产。</text>
+</svg>

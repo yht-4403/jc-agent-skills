@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">dbskill 单任务动态编排图</title>
+  <desc id="desc">dbs 利用上下文判断当前下一步，直接处理、澄清、组合或对照方法，在当前对话中推进。方法仍匹配时继续，前提失效或不匹配时重新判断，目标完成后结束。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563EB"/>
+    </marker>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .eyebrow { font-size: 16px; font-weight: 700; letter-spacing: 1.8px; fill: #2563EB; }
+      .title { font-size: 38px; font-weight: 700; fill: #0F172A; }
+      .subtitle { font-size: 18px; font-weight: 400; fill: #64748B; }
+      .index { font-size: 14px; font-weight: 700; fill: #94A3B8; }
+      .index-inverse { font-size: 14px; font-weight: 700; fill: #BFDBFE; }
+      .label { font-size: 21px; font-weight: 700; fill: #0F172A; }
+      .label-inverse { font-size: 21px; font-weight: 700; fill: #FFFFFF; }
+      .body { font-size: 16px; font-weight: 400; fill: #64748B; }
+      .body-inverse { font-size: 16px; font-weight: 400; fill: #DBEAFE; }
+      .condition { font-size: 15px; font-weight: 700; fill: #2563EB; }
+      .node { fill: #FFFFFF; stroke: #CBD5E1; stroke-width: 1.5; }
+      .node-accent { fill: #EFF6FF; stroke: #93C5FD; stroke-width: 1.5; }
+      .node-strong { fill: #2563EB; stroke: #2563EB; stroke-width: 1.5; }
+      .line { fill: none; stroke: #2563EB; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .rail { fill: none; stroke: #93C5FD; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .footer { font-size: 16px; font-weight: 600; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="900" fill="#F8FAFC"/>
+  <rect x="72" y="68" width="40" height="6" rx="3" fill="#2563EB"/>
+  <text class="eyebrow" x="128" y="78">DBSKILL · 动态编排</text>
+  <text class="title" x="72" y="137">围绕当前目标，直接开始处理</text>
+  <text class="subtitle" x="72" y="177">依据事实选择方法，沿用上下文，根据反馈调整。</text>
+
+  <rect class="node" x="72" y="252" width="220" height="146" rx="18"/>
+  <text class="index" x="96" y="282">01 · INPUT</text>
+  <text class="label" x="96" y="330">真实任务</text>
+  <text class="body" x="96" y="362">材料、问题或新反馈</text>
+
+  <path class="line" d="M292 325 H327"/>
+
+  <rect class="node-strong" x="336" y="252" width="176" height="146" rx="18"/>
+  <text class="index-inverse" x="360" y="282">02 · COMPOSE</text>
+  <text class="label-inverse" x="360" y="330">/dbs</text>
+  <text class="body-inverse" x="360" y="362">读取上下文并判断</text>
+
+  <path class="line" d="M512 325 H547"/>
+
+  <rect class="node" x="556" y="252" width="236" height="146" rx="18"/>
+  <text class="index" x="580" y="282">03 · PLAN</text>
+  <text class="label" x="580" y="330">选择当前下一步</text>
+  <text class="body" x="580" y="362">直接处理／补充信息</text>
+  <text class="body" x="580" y="385">组合能力／对照尝试</text>
+
+  <path class="line" d="M792 325 H827"/>
+
+  <rect class="node" x="836" y="252" width="292" height="146" rx="18"/>
+  <text class="index" x="860" y="282">04 · OUTPUT</text>
+  <text class="label" x="860" y="330">在对话中推进</text>
+  <text class="body" x="860" y="362">交付结果或提出关键问题</text>
+
+  <text class="eyebrow" x="72" y="480">根据事实与反馈继续判断</text>
+  <path class="rail" d="M982 398 V520 H232"/>
+  <path class="rail" d="M232 520 H968"/>
+  <path class="line" d="M232 520 V557"/>
+  <path class="line" d="M600 520 V557"/>
+  <path class="line" d="M968 520 V557"/>
+
+  <rect class="node-accent" x="72" y="566" width="320" height="170" rx="18"/>
+  <text class="condition" x="96" y="600">任务未完成且方法适合</text>
+  <text class="label" x="96" y="648">继续当前 Skill</text>
+  <text class="body" x="96" y="682">结合新反馈继续处理</text>
+  <text class="body" x="96" y="708">无需重复描述材料</text>
+
+  <rect class="node" x="440" y="566" width="320" height="170" rx="18"/>
+  <text class="condition" x="464" y="600">前提失效或方法不匹配</text>
+  <text class="label" x="464" y="648">保留信息，重新判断</text>
+  <text class="body" x="464" y="682">依据反证、目标或阶段变化</text>
+
+  <rect class="node" x="808" y="566" width="320" height="170" rx="18"/>
+  <text class="condition" x="832" y="600">当前任务已经完成</text>
+  <text class="label" x="832" y="648">直接结束</text>
+  <text class="body" x="832" y="682">没有新目标时不制造下一步</text>
+
+  <rect x="72" y="798" width="1056" height="58" rx="14" fill="#E2E8F0"/>
+  <circle cx="101" cy="827" r="7" fill="#2563EB"/>
+  <text class="footer" x="120" y="833">无需复制提示词或重复背景；方法可以调整，目标完成即结束。</text>
+</svg>
