@@ -1,12 +1,107 @@
 # jc-agent-skills
 
-规则塞进系统提示词，是越攒越管不住的。
+27 个 Agent Skill，各自管一类具体问题，只在相关任务出现时加载。规则不堆在系统提示词里，写在各自的位置：什么时候用、怎么做、做成什么样算合格。
 
-这个仓库是另一种做法：27 个 Agent Skill，各自只在任务相关时才加载。什么时候该用、怎么做、做成什么样算合格，写在各自的位置。写作、调研、学习、工作对接、前端设计都有，全部来自日常工作里的真实使用：某次输出翻车了，写下规则；规则太长，拆成按需读取的细节；需要稳定输出，改成脚本；改完跑回归用例，确认没退化。
+不想看介绍，直接往下滑到「按问题选一套」，复制提示词发给你的 AI 就能用。
+
+## 按问题选一套
+
+每套解决一类问题，可以只装一套。复制代码块发给你在用的 AI，它会自己克隆、安装、启用。
+
+### AI 说话假、回复一大段看不懂：易读输出套
+
+装这三个：`jc-no-ai-flavor-latest`、`wb-visualizer-guide`、`jc-markdown-visual-writer-latest`。效果是 AI 先给结论、先给图、正文变短、结尾告诉你下一步怎么追问。这套是其他好几套的底座，建议第一个装。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-no-ai-flavor-latest、wb-visualizer-guide、jc-markdown-visual-writer-latest 这三个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/；不是 WorkBuddy 就跳过 wb-visualizer-guide）。装完告诉我每个管什么，从下一条回复起按 jc-no-ai-flavor-latest 的规则输出。
+```
+
+验证：随便问个复杂问题，看它是不是先给结论、段落变短。
+
+### 复杂机制听不懂：通俗讲解套
+
+装这两个：`jc-plain-explainer`、`jc-html-lecture`。先装上面的易读输出套。效果是 AI 用一个具体例子带你走完一遍真实过程，术语第一次出现给人话解释。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-plain-explainer、jc-html-lecture 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么，之后我问机制原理时按它们的规则讲。
+```
+
+验证：问一个一直觉得抽象的机制，比如「HTTPS 握手」，看它是不是用具体例子讲。
+
+### 要系统学一个陌生领域：学习套
+
+装这两个：`jc-learning`、`jc-learning-map`。效果是先给你一张这个领域的知识地图，标出卡点和第一步，再逐个深入。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-learning、jc-learning-map 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+```
+
+验证：让它给你一个陌生领域画学习地图，看是不是先出全景再讲细节。
+
+### 写文案、发内容：写作套
+
+装这四个：`jc-voice`、`jc-site-copy`、`jc-knowledge-capture`、`jc-daily-thought-social-publisher-v5`。分别管个人嗓音、官网文案、知识整理、社媒改写。注意 jc-voice 在仓库里是脱敏示例，要把自己的手写原文换进 references/ 才有完整效果。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-voice、jc-site-copy、jc-knowledge-capture、jc-daily-thought-social-publisher-v5 这四个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么、什么时候触发。
+```
+
+### 日报周报、工作对接：工作套
+
+装这四个：`jc-report`、`jc-work-coordination`、`jc-decision-grade`、`jc-project-loop`。先装易读输出套。分别管报告、对接消息、决策交付、长项目推进。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-report、jc-work-coordination、jc-decision-grade、jc-project-loop 这四个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+```
+
+验证：把一周的工作流水发给它出周报，看有没有测试计数、错误码这类不该出现的细节。
+
+### 调研公司、整理录音：调研套
+
+装这两个：`jc-company-research`、`jc-audio-transcriber`。前者倒推调研深度，后者把录音批量转逐字稿。jc-audio-transcriber 依赖本地 ASR 工具链，装前看它 SKILL.md 里的环境要求。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-company-research、jc-audio-transcriber 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么、需要什么环境。
+```
+
+### 做前端设计：前端套
+
+装这两个：`jc-frontend-uiux`、`jc-frontend-workflow`。前者是动手前的设计预算和自查清单，后者是整体重设计的完整工作流。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-frontend-uiux、jc-frontend-workflow 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+```
+
+### 想自己写 skill：技能工程套
+
+装这两个：`jc-skills-creator`、`jc-skill-installer`。前者管怎么写一个值得存在的 skill，后者管个人 skill 库的安装、启停和版本。
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-skills-creator、jc-skill-installer 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+```
+
+### 单件工具
+
+这几个单独装就有用，不跟别的套绑定：
+
+| 技能 | 干什么 |
+| --- | --- |
+| [`jc-bookmarks`](jc-bookmarks/) | 整理浏览器收藏夹，收敛层级、按用途分类 |
+| [`jc-english-chunk-cards`](jc-english-chunk-cards/) | 把日常语料拆成语义块，制卡写入墨墨背单词 |
+| [`jc-quiet-ad`](jc-quiet-ad/) | 做或评「不像广告」的品牌广告 |
+| [`jc-client-howto-guide`](jc-client-howto-guide/) | 给已交付的产品写客户照着能做完的操作指引 |
+| [`jc-concept-deconstruct`](jc-concept-deconstruct/) | 把文章、课程、论文拆成概念字典和案例拆解 |
+| [`jc-rich-doc-publisher`](jc-rich-doc-publisher/) | 把长内容做成适合手机和电脑阅读的富文档 |
+
+## 想全装
+
+复制这段发给你的 AI：
+
+```text
+克隆 https://github.com/yht-4403/jc-agent-skills ，把仓库里 jc- 开头和 wb- 开头的技能目录全部复制（或软链）到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完列出装了哪些、各自什么时候触发。
+```
 
 ## 一个技能如何进入工作
-
-从提问到输出，一个技能经历这几步：
 
 ```mermaid
 graph LR
@@ -31,19 +126,6 @@ graph LR
 ```
 
 触发看 `description` 一句话；`SKILL.md` 只放主干，细节按需读取；每次修改跑 `evals/`，确认原本能过的用例没退化。
-
-## 按问题成套安装
-
-不想全装，就按遇到的问题成套拿。每套在 `bundles/` 里有一个 PROMPT.md，复制发给你的 AI，它自己克隆、安装、启用：
-
-| 你遇到的问题 | 装这套 | 包含的技能 | 一键提示词 |
-| --- | --- | --- | --- |
-| AI 说话假、套话多、一屏文字墙 | 去 AI 味核心 | `jc-no-ai-flavor-latest` | [bundles/core/PROMPT.md](bundles/core/PROMPT.md) |
-| 纯文字看不懂，想先看图 | 图先行 | `wb-visualizer-guide`、`jc-markdown-visual-writer-latest` | [bundles/visual/PROMPT.md](bundles/visual/PROMPT.md) |
-| 复杂机制、陌生行业听不懂 | 通俗讲解 | `jc-plain-explainer` | [bundles/explainer/PROMPT.md](bundles/explainer/PROMPT.md) |
-| 要写日报、周报、汇报 | 报告 | `jc-report` | [bundles/report/PROMPT.md](bundles/report/PROMPT.md) |
-
-「去 AI 味核心」是底座，后三套都假设它已装好。这四套联动解决同一件事：把 AI 的输出规范成 30 秒能看懂的人话。core 管留什么、顺序和文味，visual 管图，explainer 和 report 是两个高频场景的专项。
 
 ## 技能清单
 
@@ -98,16 +180,6 @@ graph LR
 | [`jc-frontend-uiux`](jc-frontend-uiux/) | 前端界面设计纪律。动手前先写设计预算，生成后做冗余、层次、颜色三组自查 |
 | [`jc-frontend-workflow`](jc-frontend-workflow/) | 前端整体重设计工作流。从真实任务出发，经参考站拆解、独立原型和截图迭代，固化规则后分批迁入正式代码 |
 | [`jc-quiet-ad`](jc-quiet-ad/) | 做或评「不像广告」的品牌广告：户外大屏、地铁灯箱、品牌主视觉。靠延迟观众把它归类为广告的那一秒 |
-
-## 两步就能用
-
-复制下面这段提示词，发给你正在用的 AI（Claude Code、Codex、WorkBuddy 等），它会自己装好：
-
-```
-把 https://github.com/yht-4403/jc-agent-skills 这个仓库的技能装到我当前用的平台：克隆仓库，把里面 jc- 开头的技能目录全部软链（或复制）到当前平台的 skills 目录；装完列出装了哪些技能、各自什么时候会触发。
-```
-
-只想用某一个，告诉它只装那一个就行。
 
 ## 一个技能长什么样
 
