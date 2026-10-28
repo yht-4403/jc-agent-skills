@@ -120,6 +120,14 @@
 
 做出来之后不算完：写正例反例，跑多轮机器评测，按 V1、V2、V3 加 latest 的版本管理一路迭代，直到在日常工作里稳定好用。
 
+这条主线的每一步自己都固化成了 skill，也在仓库里：
+
+- [`jc-find-standard-answer`](jc-find-standard-answer/)：负责「找这个领域历史上最好的解法」这一步，挖理论、对照成功失败反例、给带条件的答案。
+- [`jc-skills-creator`](jc-skills-creator/)：负责「把它写成一个值得存在的 skill」这一步，含正例反例和评测怎么跑。
+- [`jc-skill-installer`](jc-skill-installer/)：负责版本管理和多平台同步，V1、V2 加 latest 的迭代靠它落地。
+
+安装提示词见上面的「调研套」和「技能工程套」。
+
 ## License
 
 [MIT](LICENSE)
