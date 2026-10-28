@@ -135,7 +135,7 @@
 | GSAP 官方 | 网页动画 | 8 | [gsap-core](gsap-core/) |
 | [广智销售宇宙](guangzhi-b2b-sales/) | B2B 销售全流程：商机跟进、通话复盘、100 场景话术 | 4 | guangzhi-b2b-sales、sales-script-system |
 
-广智销售宇宙是我们用 [`domain-skill-factory`](domain-skill-factory/)（配套批处理 [`domain-skill-loop`](domain-skill-loop/)）把《广智销售宇宙》整本书蒸馏出来的：喂书进去，产出带原文依据的知识地图和场景话术。想蒸馏自己的书，装这两个。
+广智销售宇宙是我们用开源的 [`multi-source-skill-forge`](multi-source-skill-forge/)（炼技 SkillForge）把《广智销售宇宙》整本书蒸馏出来的：喂书进去，产出带原文依据、可独立调用、能压力测试的成套技能。想蒸馏自己的书、课程或播客，装它。
 
 来源说明：Matt Pocock 系列原版在 GitHub（mattpocock/skills），GSAP 是官方技能，其余为社区收集，部分原作者不明。
 

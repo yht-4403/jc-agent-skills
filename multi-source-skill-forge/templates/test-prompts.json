@@ -1,0 +1,63 @@
+{
+  "skill": "<entry-slug>",
+  "version": "0.1.0",
+  "sources": ["src-a", "src-b"],
+  "darwin_compatible": true,
+  "minimum_pass_rate": 0.8,
+  "notes": "3–5 条 should_trigger + 2–3 条 should_not_trigger（含 1 条跨能力混淆诱饵、1 条无关诱饵）+ 1–3 条 edge_case（含至少 1 条边界反转题）。多源项目再加 1 条 C 级话题用例。",
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "<使用时最自然的说法>",
+      "expected_behavior": "激活本能力，执行 <哪一步>",
+      "notes": "正面场景",
+      "evidence_level": "A"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "<同一需求但换一种说话方式>",
+      "expected_behavior": "激活本能力",
+      "notes": "正面场景：不同措辞",
+      "evidence_level": "B"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "<英文提问，验证中英 trigger 都有效>",
+      "expected_behavior": "激活本能力",
+      "notes": "正面场景：英文触发",
+      "evidence_level": "A"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "<应该由同一批材料里另一张卡处理的请求>",
+      "expected_behavior": "不应激活本能力，应由 <兄弟卡 slug> 处理",
+      "notes": "★ 跨能力混淆诱饵（硬性要求：至少 1 条）"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "<完全无关的信息查询>",
+      "expected_behavior": "不调用任何本包能力",
+      "notes": "无关诱饵"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "<把 B 段写的反场景包装成一个看起来像正面请求的提问>",
+      "expected_behavior": "守住边界：明确说明不适用，给出轻量替代建议而不是套完整流程",
+      "notes": "★ 边界反转题（硬性要求：至少 1 条）"
+    },
+    {
+      "id": "edge-02",
+      "type": "edge_case",
+      "prompt": "<只有单一来源支持的结论所覆盖的话题，问得像是在求确认>",
+      "expected_behavior": "给出结论的同时明确标注证据强度不足（单一来源，未经其他来源印证）",
+      "notes": "★ 低置信度用例（多源项目必填）",
+      "evidence_level": "C"
+    }
+  ]
+}

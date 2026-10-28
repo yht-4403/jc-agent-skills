@@ -1,0 +1,93 @@
+# .forge/bundle.yaml — 唯一事实源
+#
+# 所有能力元数据集中在这里；卡正文（R/I/A1/A2/E/B）在 .forge/cards/<slug>.md。
+# 阶 7 的 hub / split / mix 三种产物都由本文件确定性编译，不要手工维护两份。
+# capability_id 是稳定 ID：改文案只加 revision，语义拆分/合并才换 ID。
+
+schema_version: 1
+bundle_id: bundle.<slug>
+
+project:
+  title: <项目名>
+  sources_pack: <来源包的标识或目录>
+  created_at: <YYYY-MM-DD>
+  depth: full                       # fast | full
+  output_mode: mix                  # hub | split | mix
+  entry_budget: 6
+
+# hub（总入口）—— output_mode 为 hub / mix 时必填
+entry:
+  name: <kebab-case-slug>
+  description: |
+    <何时用 + 何时不用 + 关键 trigger，≥40 字>
+  core_principles:                  # 3–7 条，概览类问题读到这里即可回答
+    - <一句话决策规则>
+    - <一句话决策规则>
+    - <一句话决策规则>
+  out_of_scope:
+    - <明确不管的事>
+  stop_conditions:
+    - 意图在路由表中无法命中 → 明确告知超出本包范围，不硬套
+    - 涉及医疗/法律/人身安全 → 停止套用方法论，建议专业求助
+
+capabilities:
+  - capability_id: cap.<slug>.<name>
+    revision: 1
+    status: active                  # active | merged-into-other | retired
+    slug: <kebab-case>
+    title: <中文标题>
+    confidence: A                   # A 跨源一致 | B 单源多域 | C 单源单域
+    freshness: evergreen            # evergreen | decade | volatile
+    importance: high                # critical | high | medium | low
+    importance_rationale: "<为什么重要：入度 / 篇幅占比 / 命中使用者目标任务>"
+    destination: promoted           # promoted（独立入口）| router（hub 内能力卡）
+    one_liner: <一句话决策规则>       # 进入 hub 的 core_principles
+    intents:                        # 进入 hub 路由表的"用户意图"列
+      - <用户意图>
+    keywords: [<中文关键词>, <english-keyword>]
+    also_read: []                   # 阶 5 填充：相关卡 slug 列表
+    card: cards/<slug>.md
+    frontmatter:
+      description: |                # A2 的浓缩版，≤300 字；晋级入口直接用它
+        <何时用 + 何时不用 + 关键 trigger>
+      tags: [decision, mental-model]
+    source_evidence:
+      - source_id: src-a
+        location: <章节 / 页码 / 时间戳 / 分 P>
+      - source_id: src-b
+        location: <...>
+    conflict_ref:                   # 有源间分歧时填
+      - conflicts/<id>.md
+
+  # ↓ 第二张卡（router 示例：不独立发现，只在 hub 内按需加载）
+  - capability_id: cap.<slug>.<name2>
+    revision: 1
+    status: active
+    slug: <kebab-case>
+    title: <中文标题>
+    confidence: B
+    freshness: evergreen
+    importance: medium
+    importance_rationale: "<...>"
+    destination: router
+    one_liner: <...>
+    intents:
+      - <...>
+    keywords: [<...>]
+    also_read: []
+    card: cards/<slug2>.md
+    frontmatter:
+      description: |
+        <...>
+      tags: []
+    source_evidence:
+      - source_id: src-a
+        location: <...>
+
+# 编译自检（阶 7 执行）
+invariants:
+  - 每个 active 能力恰好一个去向（promoted 或 router）
+  - 1 + promoted 数 ≤ entry_budget，否则超预算项降为 router
+  - 所有 promoted 必须有对应的独立入口目录
+  - hub 路由表必须覆盖所有 router 能力
+  - hub 与 split 不得同时安装
