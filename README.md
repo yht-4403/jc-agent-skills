@@ -1,8 +1,8 @@
 # jc-agent-skills
 
-26 个 Agent Skill，各自管一类具体问题。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
+27 个 Agent Skill，各自管一类具体问题。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
 
-![26 个技能按问题分成的八套](assets/repo-map.svg)
+![27 个技能按问题分成的八套](assets/repo-map.svg)
 
 ## 按问题选一套
 
@@ -69,13 +69,14 @@
 
 验证：把一周的工作流水发给它出周报，看有没有测试计数、错误码这类不该出现的细节。
 
-### 调研公司、整理录音：调研套
+### 调研公司、整理录音、给复杂问题找答案：调研套
 
+- [`jc-find-standard-answer`](jc-find-standard-answer/)：遇到一个复杂问题，想知道这个领域历史上最好是怎么解的，所以做了它。先挖可信理论，再对照成功、失败和反例，给出带条件的标准答案。
 - [`jc-company-research`](jc-company-research/)：调研一家公司越查越散，所以做了它。先定这次调研支撑什么输出，再倒推查多深。
 - [`jc-audio-transcriber`](jc-audio-transcriber/)：一堆录音想变成能搜的文字，所以做了它。依赖本地 ASR 工具链，装前看它 SKILL.md 里的环境要求。
 
 ```text
-克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-company-research、jc-audio-transcriber 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么、需要什么环境。
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-find-standard-answer、jc-company-research、jc-audio-transcriber 这三个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么、需要什么环境。
 ```
 
 ### 做前端设计：前端套

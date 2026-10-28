@@ -19,7 +19,7 @@
   <!-- 根节点 -->
   <rect x="40" y="248" width="190" height="64" rx="10" fill="#E6F1FB" stroke="#185FA5"/>
   <text x="135" y="272" text-anchor="middle" font-size="15" font-weight="500" fill="#0C447C">jc-agent-skills</text>
-  <text x="135" y="294" text-anchor="middle" font-size="12" fill="#185FA5">26 个技能，按问题分套</text>
+  <text x="135" y="294" text-anchor="middle" font-size="12" fill="#185FA5">27 个技能，按问题分套</text>
 
   <!-- 第一列 -->
   <g>

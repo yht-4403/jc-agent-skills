@@ -1,0 +1,7 @@
+interface:
+  display_name: "JC Find Standard Answer"
+  short_description: "复杂问题先挖可信理论，再对照历史同构的成功、失败和反例，给出带条件的标准答案"
+  default_prompt: "使用 $jc-find-standard-answer，先直接回答，再挖这个领域的可信理论，对照历史案例，给我带条件的标准答案。"
+
+policy:
+  allow_implicit_invocation: true
