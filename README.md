@@ -1,8 +1,8 @@
 # jc-agent-skills
 
-27 个 Agent Skill，各自管一类具体问题。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
+27 个自研 Agent Skill，各自管一类具体问题；附录另收录 224 个。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
 
-![27 个技能按问题分成的八套](assets/repo-map.svg)
+![27 个自研技能按问题分成的八套，附录另收录 224 个](assets/repo-map.svg)
 
 ## 按问题选一套
 
@@ -128,7 +128,7 @@
 | --- | --- | --- | --- |
 | [gingiris 增长实战手册](gingiris-skills/) | 增长全链路 SOP：UGC 矩阵、用户访谈、SEO/GEO、KOL 投放、Product Hunt 发布、GTM | 61 | gingiris-ugc-matrix、gingiris-user-interview |
 | [dbskill 内容方法论](dbskill/) | 内容创作、传播、拆解的成套打法 | 35 | dbs、dbs-deconstruct |
-| [Matt Pocock 工程实践](mattpocock-skills/) | TS 和前端工程：TDD、代码评审、调试 | 17 | tdd、code-review |
+| [Matt Pocock 工程实践](mattpocock-skills/) | TS 和前端工程：TDD、代码评审、调试 | 41 | tdd、code-review |
 | 营销增长套件 | 转化优化、SEO、邮件、定价、广告 | 32 | [pricing-strategy](pricing-strategy/)、[seo-audit](seo-audit/) |
 | 工程类 | 架构、后端、测试、部署 | 21 | [clean-architecture](clean-architecture/)、[playwright-skill](playwright-skill/) |
 | 设计类 | 品牌、配色、界面评审 | 19 | [better-colors](better-colors/)、[impeccable](impeccable/) |
