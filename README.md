@@ -1,18 +1,20 @@
 # jc-agent-skills
 
-27 个 Agent Skill，各自管一类具体问题。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
+26 个 Agent Skill，各自管一类具体问题。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
+
+![26 个技能按问题分成的八套](assets/repo-map.svg)
 
 ## 按问题选一套
 
 ### AI 说话假、回复一大段看不懂：易读输出套
 
 - [`jc-no-ai-flavor-latest`](jc-no-ai-flavor-latest/)：AI 回复又长又假、看着累，所以做了它。管结论先行、篇幅和文味，目标是 30 秒看懂一条回复。
-- [`wb-visualizer-guide`](wb-visualizer-guide/)、[`jc-markdown-visual-writer-latest`](jc-markdown-visual-writer-latest/)：纯文字看不懂、想先看图，所以做了这两个。一个管 WorkBuddy 里的内联图，一个管 Markdown 里的 Mermaid 图。
+- [`jc-markdown-visual-writer-latest`](jc-markdown-visual-writer-latest/)：纯文字看不懂、想先看图，所以做了它。用 Mermaid 把流程和结构画出来。
 
 这套是其他几套的底座，建议第一个装。
 
 ```text
-克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-no-ai-flavor-latest、wb-visualizer-guide、jc-markdown-visual-writer-latest 这三个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/；不是 WorkBuddy 就跳过 wb-visualizer-guide）。装完告诉我每个管什么，从下一条回复起按 jc-no-ai-flavor-latest 的规则输出。
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-no-ai-flavor-latest、jc-markdown-visual-writer-latest 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么，从下一条回复起按 jc-no-ai-flavor-latest 的规则输出。
 ```
 
 验证：随便问个复杂问题，看它是不是先给结论、段落变短。
@@ -108,7 +110,7 @@
 ## 想全装
 
 ```text
-克隆 https://github.com/yht-4403/jc-agent-skills ，把仓库里 jc- 开头和 wb- 开头的技能目录全部复制（或软链）到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完列出装了哪些、各自什么时候触发。
+克隆 https://github.com/yht-4403/jc-agent-skills ，把仓库里 jc- 开头的技能目录全部复制（或软链）到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完列出装了哪些、各自什么时候触发。
 ```
 
 ## License

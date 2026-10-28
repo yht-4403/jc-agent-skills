@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" font-family="-apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="960" height="520" fill="#FFFFFF"/>
+
+  <!-- 主干连线 -->
+  <g stroke="#B4B2A9" stroke-width="1" fill="none">
+    <path d="M230 280 H270"/>
+    <path d="M270 50 V466"/>
+    <path d="M270 50 H330"/>
+    <path d="M270 154 H330"/>
+    <path d="M270 258 H330"/>
+    <path d="M270 362 H330"/>
+    <path d="M270 466 H330"/>
+    <path d="M270 102 H650"/>
+    <path d="M270 206 H650"/>
+    <path d="M270 310 H650"/>
+    <path d="M270 414 H650"/>
+  </g>
+
+  <!-- 根节点 -->
+  <rect x="40" y="248" width="190" height="64" rx="10" fill="#E6F1FB" stroke="#185FA5"/>
+  <text x="135" y="272" text-anchor="middle" font-size="15" font-weight="500" fill="#0C447C">jc-agent-skills</text>
+  <text x="135" y="294" text-anchor="middle" font-size="12" fill="#185FA5">26 个技能，按问题分套</text>
+
+  <!-- 第一列 -->
+  <g>
+    <rect x="330" y="24" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="346" y="46" font-size="14" font-weight="500" fill="#633806">易读输出套</text>
+    <text x="346" y="64" font-size="12" fill="#854F0B">AI 说话假、回复一大段看不懂</text>
+
+    <rect x="330" y="128" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="346" y="150" font-size="14" font-weight="500" fill="#633806">通俗讲解套</text>
+    <text x="346" y="168" font-size="12" fill="#854F0B">复杂机制听不懂</text>
+
+    <rect x="330" y="232" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="346" y="254" font-size="14" font-weight="500" fill="#633806">学习套</text>
+    <text x="346" y="272" font-size="12" fill="#854F0B">陌生领域不知道从哪下手</text>
+
+    <rect x="330" y="336" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="346" y="358" font-size="14" font-weight="500" fill="#633806">写作套</text>
+    <text x="346" y="376" font-size="12" fill="#854F0B">AI 写的东西不像你写的</text>
+
+    <rect x="330" y="440" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="346" y="462" font-size="14" font-weight="500" fill="#633806">工作套</text>
+    <text x="346" y="480" font-size="12" fill="#854F0B">周报、对接、拍板、长项目</text>
+  </g>
+
+  <!-- 第二列 -->
+  <g>
+    <rect x="650" y="76" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="666" y="98" font-size="14" font-weight="500" fill="#633806">调研套</text>
+    <text x="666" y="116" font-size="12" fill="#854F0B">调研越查越散、录音堆着</text>
+
+    <rect x="650" y="180" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="666" y="202" font-size="14" font-weight="500" fill="#633806">前端套</text>
+    <text x="666" y="220" font-size="12" fill="#854F0B">界面乱又说不出哪不对</text>
+
+    <rect x="650" y="284" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>
+    <text x="666" y="306" font-size="14" font-weight="500" fill="#633806">技能工程套</text>
+    <text x="666" y="324" font-size="12" fill="#854F0B">想自己写 skill</text>
+
+    <rect x="650" y="388" width="280" height="52" rx="8" fill="#EAF3DE" stroke="#639922"/>
+    <text x="666" y="410" font-size="14" font-weight="500" fill="#27500A">单件工具</text>
+    <text x="666" y="428" font-size="12" fill="#3B6D11">收藏夹、单词卡等 6 件，单独装</text>
+  </g>
+</svg>

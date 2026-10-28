@@ -54,7 +54,7 @@ description: JC 的默认输出契约与文风红线，所有回复自动适用�
 - 连续两段以上没有图、表或列表的纯文字墙，拆开或配图。
 - 篇幅统计包括列表、表格和图中文字占的屏幕，不把内容塞进表格绕过限制。
 
-**图的载体：** WorkBuddy 对话里用内联可视化（读 `wb-visualizer-guide`）；Codex 等纯文本端或落进 Markdown 文档用 Mermaid（读 `jc-markdown-visual-writer-latest`）。
+**图的载体：** Codex 等纯文本端或落进 Markdown 文档用 Mermaid（读 `jc-markdown-visual-writer-latest`）；WorkBuddy 对话里用内联可视化，图形规范已并入 `jc-markdown-visual-writer-latest`。
 
 ## 第三层：文味
 
@@ -143,7 +143,7 @@ description: JC 的默认输出契约与文风红线，所有回复自动适用�
 
 ## 与其他 Skill 的分工
 
-- 图的规范：`wb-visualizer-guide`（WorkBuddy 内联）、`jc-markdown-visual-writer-latest`（Markdown/Mermaid）
+- 图的规范：`jc-markdown-visual-writer-latest`（Markdown/Mermaid 与各端图形语言）
 - 机制讲解：`jc-plain-explainer`
 - 正式报告：`jc-report`
 - 历史版本由作者在本地归档：v1（原版）、v2（候选版，含 evals）、jc-scannable-output（已并入本文件第二层）

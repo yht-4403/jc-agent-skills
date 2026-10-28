@@ -1,6 +1,0 @@
-interface:
-  display_name: "WB Visualizer Guide"
-  short_description: "WorkBuddy 可视化设计规范：九色系、680 画布、SVG 与 Chart.js 图表标准"
-  default_prompt: "使用 $wb-visualizer-guide 按 WorkBuddy 可视化标准画这张图。"
-policy:
-  allow_implicit_invocation: true
