@@ -1,8 +1,8 @@
 # jc-agent-skills
 
-27 个自研 Agent Skill，各自管一类具体问题；附录另收录 224 个。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
+28 个自研 Agent Skill，各自管一类具体问题；附录另收录 224 个。不用懂原理，按你遇到的问题选一套，复制提示词发给你的 AI，它自己装好。
 
-![27 个自研技能按问题分成的八套，附录另收录 224 个](assets/repo-map.svg)
+![28 个自研技能按问题分成的八套，附录另收录 224 个](assets/repo-map.svg)
 
 ## 按问题选一套
 
@@ -98,9 +98,10 @@
 
 - [`jc-skills-creator`](jc-skills-creator/)：想写 skill 但不知道值不值得写、怎么写，所以做了它。
 - [`jc-skill-installer`](jc-skill-installer/)：skill 多了管不过来，所以做了它。
+- [`jc-skill-publisher`](jc-skill-publisher/)：skill 写完了想发到开源仓库，所以做了它。隐私扫描、归类上架、更新 README 一把走。
 
 ```text
-克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-skills-creator、jc-skill-installer 这两个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
+克隆 https://github.com/yht-4403/jc-agent-skills ，把 jc-skills-creator、jc-skill-installer、jc-skill-publisher 这三个目录复制到我当前平台的 skills 目录（WorkBuddy 是 ~/.workbuddy/skills/，Claude Code 是 ~/.claude/skills/，Codex 是 ~/.codex/skills/）。装完告诉我每个管什么。
 ```
 
 ### 单件工具

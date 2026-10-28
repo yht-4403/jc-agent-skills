@@ -1,0 +1,7 @@
+interface:
+  display_name: "JC Skill Publisher"
+  short_description: "把本地 skill 发布到 jc-agent-skills 开源仓库：隐私扫描、归类上架、更新 README 和地图、提交推送"
+  default_prompt: "使用 $jc-skill-publisher，把指定的本地 skill 发布到开源仓库。"
+
+policy:
+  allow_implicit_invocation: true
