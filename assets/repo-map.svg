@@ -18,7 +18,7 @@
 
   <rect x="40" y="300" width="190" height="72" rx="10" fill="#E6F1FB" stroke="#185FA5"/>
   <text x="135" y="328" text-anchor="middle" font-size="15" font-weight="500" fill="#0C447C">jc-agent-skills</text>
-  <text x="135" y="350" text-anchor="middle" font-size="12" fill="#185FA5">28 自研 + 224 收录</text>
+  <text x="135" y="350" text-anchor="middle" font-size="12" fill="#185FA5">29 自研 + 223 收录</text>
 
   <g>
     <rect x="330" y="20" width="280" height="52" rx="8" fill="#FAEEDA" stroke="#BA7517"/>

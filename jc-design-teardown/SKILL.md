@@ -1,5 +1,5 @@
 ---
-name: frontend-design-teardown
+name: jc-design-teardown
 description: Use when the user asks for 前端设计拆解, 前端技术拆解, 竞品拆解, competitor website analysis, UI/UX visual study, screenshot-backed teaching docs, style extraction, color/spacing/shadow/font/motion breakdowns, Markdown research docs, or prompts for frontend AI reuse.
 disable-model-invocation: true
 ---
